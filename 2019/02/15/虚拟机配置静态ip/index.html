@@ -30,6 +30,10 @@ https://wiki.centos.org/Download
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <style type="text/css">
         
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
@@ -662,6 +666,28 @@ https://wiki.centos.org/Download
         </div>
     </div>
 
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '7b42617f95211d5847fc',
+        clientSecret: 'e272c54840e0b98ae6fda880655f266b1923bc3f',
+        repo: 'https://github.com/shenlibing/shenlibing.github.io.git',
+        owner: 'shenlibing',
+        admin: "shenlibing",
+        id: '2019-02-15T15-05-16',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
     
 
     
