@@ -434,7 +434,7 @@ public class JavaDemo2 {
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p><img src="/.io//1564975934086.png" alt="1564975934086"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source//1564975934086.png" alt></p>
 <p>top命令查看</p>
 <pre><code>[root@192 ~]# top
 top - 11:28:50 up 7 min,  2 users,  load average: 0.73, 0.39, 0.18
@@ -458,7 +458,7 @@ procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu-----
  r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
  0  0      0 1313028  21228 203868    0    0    54     3  112 1620  0  1 98  0  0       
  0  0      0 1312732  21228 203896    0    0     0     0 2579 25940  1  3 96  0  0      
- 0  0      0 1312856  21228 203896    0    0     0     0 2677 24290  1  3 97  0  0  </code></pre><p><img src="/.io//1564976316953.png" alt="1564976316953"></p>
+ 0  0      0 1312856  21228 203896    0    0     0     0 2677 24290  1  3 97  0  0  </code></pre><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1564976316953.png" alt="1564976316953"></p>
 <p>id:处于空闲的CPU百分比</p>
 <p>wa:系统等待IO的CPU时间百分比</p>
 <p>st:来自于一个虚拟机偷取的CPU时间百分比</p>
@@ -495,7 +495,7 @@ Swap:            1          0          1
 Mem:          1861        553       1308          1         20        199
 -/+ buffers/cache:        333       1528
 Swap:         2047          0       2047
-</code></pre><p><img src="/.io//1564976920565.png" alt="1564976920565"></p>
+</code></pre><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1564976920565.png" alt="1564976920565"></p>
 <p>查看额外</p>
 <pre><code>[root@192 ~]# pidstat -p 3823 -r 2
 Linux 2.6.32-642.el6.x86_64 (192.168.1.101)     08/05/2019      _x86_64_        (8 CPU)
@@ -506,7 +506,7 @@ Linux 2.6.32-642.el6.x86_64 (192.168.1.101)     08/05/2019      _x86_64_        
 11:51:22 AM      3823      0.50      0.00 3234728  47068   2.47  java
 11:51:24 AM      3823      2.50      0.00 3234728  47068   2.47  java
 11:51:26 AM      3823      0.50      0.00 3234728  47068   2.47  java
-</code></pre><p><img src="/.io//1564977136597.png" alt="1564977136597"></p>
+</code></pre><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1564977136597.png" alt="1564977136597"></p>
 <h2 id="硬盘：df"><a href="#硬盘：df" class="headerlink" title="硬盘：df"></a>硬盘：df</h2><p>查看磁盘剩余空间</p>
 <pre><code>[root@192 ~]# df -h
 Filesystem      Size  Used Avail Use% Mounted on
@@ -526,7 +526,7 @@ sda               0.00     0.00    0.50    0.00     4.00     0.00    16.00     0
 Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
 scd0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
 sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-</code></pre><p><img src="/.io//1564985628042.png" alt="1564985628042"></p>
+</code></pre><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1564985628042.png" alt="1564985628042"></p>
 <p>查看额外</p>
 <pre><code>[root@192 ~]# pidstat -d 2 -p 3485
 Linux 2.6.32-642.el6.x86_64 (192.168.1.101)     08/05/2019      _x86_64_        (8 CPU)
@@ -538,7 +538,7 @@ Linux 2.6.32-642.el6.x86_64 (192.168.1.101)     08/05/2019      _x86_64_        
 02:16:18 PM      3485      0.00      0.00      0.00  java
 02:16:20 PM      3485      0.00      0.00      0.00  java
 02:16:22 PM      3485      0.00      0.00      0.00  java
-02:16:24 PM      3485      0.00      0.00      0.00  java</code></pre><p><img src="/.io//1564985817582.png" alt="1564985817582"></p>
+02:16:24 PM      3485      0.00      0.00      0.00  java</code></pre><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1564985817582.png" alt="1564985817582"></p>
 <h2 id="网络IO：ifstat"><a href="#网络IO：ifstat" class="headerlink" title="网络IO：ifstat"></a>网络IO：ifstat</h2><p>默认本地没有，需要下载ifstat</p>
 <p>安装ifstat</p>
 <pre><code>[root@192 ifstat-1.1]# yum install flex byacc  libpcap ncurses ncurses-devel libpcap-devel gcc-c++

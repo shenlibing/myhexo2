@@ -424,7 +424,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="安装elastic"><a href="#安装elastic" class="headerlink" title="安装elastic"></a>安装elastic</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="https://www.elastic.co/cn/downloads/past-releases/elasticsearch-6-3-1" target="_blank" rel="noopener">Elasticsearch 6.3.1 | Elastic</a></p>
-<p><img src="/.io//1562550013183.png" alt="1562550013183"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562550013183.png" alt="1562550013183"></p>
 <h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><pre><code>[root@192 modules]# tar -zxvf elasticsearch-6.3.1.tar.gz</code></pre><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><h3 id="报错一"><a href="#报错一" class="headerlink" title="报错一"></a>报错一</h3><p><code>elasticsearch</code> 为了安全性默认不允许<code>root</code> 用户来启动</p>
 <pre><code>[root@192 elasticsearch-6.3.1]# cd bin/
 [root@192 bin]# ./elasticsearch
@@ -559,7 +559,7 @@ root       soft    nproc     unlimited</code></pre><p>解决系统最大虚拟�
 <p>修改<code>/etc/sysctl.conf</code>文件，末尾追加</p>
 <pre><code>vm.max_map_count=655360
 fs.file-max=655360</code></pre><h3 id="配置访问地址"><a href="#配置访问地址" class="headerlink" title="配置访问地址"></a>配置访问地址</h3><p>进入<code>/opt/modules/elasticsearch-6.3.1/config</code>目录，修改<code>elasticsearch.yml</code>文件</p>
-<p><img src="/.io//1562553937145.png" alt="1562553937145"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562553937145.png" alt="1562553937145"></p>
 <p>访问</p>
 <pre><code>[es@192 elasticsearch-6.3.1]$ curl http://192.168.1.101:9200
 {
@@ -580,12 +580,12 @@ fs.file-max=655360</code></pre><h3 id="配置访问地址"><a href="#配置访�
   &quot;tagline&quot; : &quot;You Know, for Search&quot;
 }
 [es@192 elasticsearch-6.3.1]$ 
-</code></pre><p><img src="/.io//1562554028561.png" alt="1562554028561"></p>
+</code></pre><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562554028561.png" alt="1562554028561"></p>
 <h1 id="安装kibana"><a href="#安装kibana" class="headerlink" title="安装kibana"></a>安装kibana</h1><h2 id="下载-1"><a href="#下载-1" class="headerlink" title="下载"></a>下载</h2><p><a href="https://www.elastic.co/cn/downloads/past-releases/kibana-6-3-1" target="_blank" rel="noopener">Kibana 6.3.1 | Elastic</a></p>
-<p><img src="/.io//1562549955406.png" alt="1562549955406"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562549955406.png" alt="1562549955406"></p>
 <h2 id="解压-1"><a href="#解压-1" class="headerlink" title="解压"></a>解压</h2><pre><code>[root@192 bin]# tar -zxvf kibana-6.3.1-linux-x86_64.tar.gz </code></pre><h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>进入</p>
 <pre><code>[root@192 bin]# cd kibana-6.3.1-linux-x86_64/config/</code></pre><p>修改<code>kibana.yml</code>配置文件</p>
-<p><img src="/.io//1562633630892.png" alt="1562633630892"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562633630892.png" alt="1562633630892"></p>
 <h2 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h2><pre><code>[root@192 bin]# pwd
 /opt/modules/kibana-6.3.1-linux-x86_64/bin
 [root@192 bin]# nohup ./kibana &amp;
@@ -595,8 +595,8 @@ fs.file-max=655360</code></pre><h3 id="配置访问地址"><a href="#配置访�
 [root@192 bin]# ps -ef | grep node
 root       3665   3615 51 08:45 pts/0    00:00:25 ./../node/bin/node --no-warnings ./../src/cli
 root       3685   3615  0 08:46 pts/0    00:00:00 grep node
-</code></pre><h2 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h2><p><img src="/.io//1562633817600.png" alt="1562633817600"></p>
-<p><img src="/.io//1562633912937.png" alt="1562633912937"></p>
+</code></pre><h2 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h2><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562633817600.png" alt="1562633817600"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562633912937.png" alt="1562633912937"></p>
 <h2 id="操作es增删改查"><a href="#操作es增删改查" class="headerlink" title="操作es增删改查"></a>操作es增删改查</h2><p><a href="https://wiki.shileizcc.com/confluence/pages/viewpage.action?pageId=7897093" target="_blank" rel="noopener">ES 简单操作 - ELK - Wiki.Shileizcc.com</a></p>
 <p>增</p>
 <pre class=" language-json"><code class="language-json">PUT /movie_index/movie/<span class="token number">1</span>
@@ -639,8 +639,8 @@ root       3685   3615  0 08:46 pts/0    00:00:00 grep node
     ]
 }</code></pre><p>查</p>
 <pre><code>GET /movie_index/_search</code></pre><h1 id="安装分词器analysis-ik"><a href="#安装分词器analysis-ik" class="headerlink" title="安装分词器analysis-ik"></a>安装分词器analysis-ik</h1><h2 id="下载-2"><a href="#下载-2" class="headerlink" title="下载"></a>下载</h2><p><a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v6.3.1" target="_blank" rel="noopener">Release v6.3.1 · medcl/elasticsearch-analysis-ik</a></p>
-<p><img src="/.io//1562719837250.png" alt="1562719837250"></p>
-<h2 id="解压、上传"><a href="#解压、上传" class="headerlink" title="解压、上传"></a>解压、上传</h2><p><img src="/.io//1562719919748.png" alt="1562719919748"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562719837250.png" alt="1562719837250"></p>
+<h2 id="解压、上传"><a href="#解压、上传" class="headerlink" title="解压、上传"></a>解压、上传</h2><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562719919748.png" alt="1562719919748"></p>
 <pre><code>[root@192 ~]# cd /opt/modules/elasticsearch-6.3.1/plugins/
 [root@192 plugins]# ll
 total 4
@@ -689,19 +689,19 @@ es         4167   3987  0 08:46 pts/0    00:00:00 grep node
 es         4237   3987  0 08:54 pts/0    00:00:00 grep node
 
 
-</code></pre><h2 id="访问es"><a href="#访问es" class="headerlink" title="访问es"></a>访问es</h2><p><img src="/.io//1562720371754.png" alt="1562720371754"></p>
-<h2 id="访问kibana"><a href="#访问kibana" class="headerlink" title="访问kibana"></a>访问kibana</h2><h3 id="入分词器前"><a href="#入分词器前" class="headerlink" title="入分词器前"></a>入分词器前</h3><p><img src="/.io//1562720423800.png" alt="1562720423800"></p>
-<h3 id="加入分词器后"><a href="#加入分词器后" class="headerlink" title="加入分词器后"></a>加入分词器后</h3><h4 id="简易分词器"><a href="#简易分词器" class="headerlink" title="简易分词器"></a>简易分词器</h4><p><img src="/.io//1562720485967.png" alt="1562720485967"></p>
-<p><img src="/.io//1562720869751.png" alt="1562720869751"></p>
-<h4 id="尽最大可能分词器"><a href="#尽最大可能分词器" class="headerlink" title="尽最大可能分词器"></a>尽最大可能分词器</h4><p><img src="/.io//1562720609375.png" alt="1562720609375"></p>
-<p><img src="/.io//1562720837016.png" alt="1562720837016"></p>
+</code></pre><h2 id="访问es"><a href="#访问es" class="headerlink" title="访问es"></a>访问es</h2><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562720371754.png" alt="1562720371754"></p>
+<h2 id="访问kibana"><a href="#访问kibana" class="headerlink" title="访问kibana"></a>访问kibana</h2><h3 id="入分词器前"><a href="#入分词器前" class="headerlink" title="入分词器前"></a>入分词器前</h3><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562720423800.png" alt="1562720423800"></p>
+<h3 id="加入分词器后"><a href="#加入分词器后" class="headerlink" title="加入分词器后"></a>加入分词器后</h3><h4 id="简易分词器"><a href="#简易分词器" class="headerlink" title="简易分词器"></a>简易分词器</h4><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562720485967.png" alt="1562720485967"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562720869751.png" alt="1562720869751"></p>
+<h4 id="尽最大可能分词器"><a href="#尽最大可能分词器" class="headerlink" title="尽最大可能分词器"></a>尽最大可能分词器</h4><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562720609375.png" alt="1562720609375"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562720837016.png" alt="1562720837016"></p>
 <h1 id="es集群"><a href="#es集群" class="headerlink" title="es集群"></a>es集群</h1><h2 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h2><p>克隆一个已经安装好<code>elastic、kibana、analysis-ik</code>的机器</p>
 <p>虚拟机—-快照—拍摄快照</p>
-<p><img src="/.io//1562721630555.png" alt="1562721630555"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562721630555.png" alt="1562721630555"></p>
 <p>虚拟机—管理—克隆—现有快照</p>
-<p><img src="/.io//1562721733540.png" alt="1562721733540"></p>
-<p><img src="/.io//1562721751826.png" alt="1562721751826"></p>
-<p><img src="/.io//1562721992380.png" alt="1562721992380"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562721733540.png" alt="1562721733540"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562721751826.png" alt="1562721751826"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562721992380.png" alt="1562721992380"></p>
 <h2 id="修改IP"><a href="#修改IP" class="headerlink" title="修改IP"></a>修改IP</h2><p>修改克隆后机器102的主机名、IP地址、硬件Mac地址</p>
 <p>参考</p>
 <p><a href="http://localhost:4000/myhexo/2019/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip/" target="_blank" rel="noopener">虚拟机配置静态ip | 小兵兵</a></p>
@@ -957,12 +957,12 @@ es         4285   3992 99 10:10 pts/1    00:00:04 /usr/java/jdk1.8.0_202-amd64/b
 es         4364   4285  0 10:10 pts/1    00:00:00 /opt/modules/elasticsearch-6.3.1/modules/x-pack/x-pack-ml/platform/linux-x86_64/bin/controller
 es         4370   3992  0 10:10 pts/1    00:00:00 grep elastic
 [es@192 bin]$ ll
-</code></pre><h3 id="访问-1"><a href="#访问-1" class="headerlink" title="访问"></a>访问</h3><h4 id="访问101机器"><a href="#访问101机器" class="headerlink" title="访问101机器"></a>访问101机器</h4><p><img src="/.io//1562724690806.png" alt="1562724690806"></p>
-<h4 id="访问102机器"><a href="#访问102机器" class="headerlink" title="访问102机器"></a>访问102机器</h4><p><img src="/.io//1562724717530.png" alt="1562724717530"></p>
+</code></pre><h3 id="访问-1"><a href="#访问-1" class="headerlink" title="访问"></a>访问</h3><h4 id="访问101机器"><a href="#访问101机器" class="headerlink" title="访问101机器"></a>访问101机器</h4><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562724690806.png" alt="1562724690806"></p>
+<h4 id="访问102机器"><a href="#访问102机器" class="headerlink" title="访问102机器"></a>访问102机器</h4><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562724717530.png" alt="1562724717530"></p>
 <h2 id="集群管理工具cerebro"><a href="#集群管理工具cerebro" class="headerlink" title="集群管理工具cerebro"></a>集群管理工具cerebro</h2><p><a href="https://article.itxueyuan.com/3wEvb" target="_blank" rel="noopener">插件【head,bigdesk,cerebro[kopf]】安装 </a></p>
 <h3 id="下载-3"><a href="#下载-3" class="headerlink" title="下载"></a>下载</h3><p><a href="https://github.com/lmenezes/cerebro/releases" target="_blank" rel="noopener">Releases · lmenezes/cerebro</a></p>
-<p><img src="/.io//1562725274935.png" alt="1562725274935"></p>
-<h3 id="上传、解压"><a href="#上传、解压" class="headerlink" title="上传、解压"></a>上传、解压</h3><p><img src="/.io//1562725682229.png" alt="1562725682229"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562725274935.png" alt="1562725274935"></p>
+<h3 id="上传、解压"><a href="#上传、解压" class="headerlink" title="上传、解压"></a>上传、解压</h3><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562725682229.png" alt="1562725682229"></p>
 <pre><code>[root@192 modules]# cd /opt/
 [root@192 opt]# mkdir soft
 [root@192 opt]# ll
@@ -996,8 +996,8 @@ total 20
 -rwxr-xr-x. 1 503 games 4970 Apr  5 16:48 cerebro.bat
 [root@192 bin]# nohup ./cerebro &amp;
 [1] 4030
-[root@192 bin]# nohup: ignoring input and appending output to `nohup.out&#39;</code></pre><h3 id="访问-2"><a href="#访问-2" class="headerlink" title="访问"></a>访问</h3><p><img src="/.io//1562725889336.png" alt="1562725889336"></p>
-<p><img src="/.io//1562725925581.png" alt="1562725925581"></p>
+[root@192 bin]# nohup: ignoring input and appending output to `nohup.out&#39;</code></pre><h3 id="访问-2"><a href="#访问-2" class="headerlink" title="访问"></a>访问</h3><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562725889336.png" alt="1562725889336"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562725925581.png" alt="1562725925581"></p>
 <h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>建立一条数据</p>
 <p>启动kibana，访问添加数据</p>
 <pre><code>[root@192 modules]# cd /opt/modules/kibana-6.3.1-linux-x86_64/bin/
@@ -1011,9 +1011,9 @@ total 948
 [es@192 bin]$ nohup ./kibana &amp;
 [1] 4434
 [es@192 bin]$ nohup: ignoring input and appending output to `nohup.out&#39;
-</code></pre><p><img src="/.io//1562726914934.png" alt="1562726914934"></p>
+</code></pre><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562726914934.png" alt="1562726914934"></p>
 <p><code>cerebro</code>管理工具查看</p>
-<p><img src="/.io//1562726996681.png" alt="1562726996681"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1562726996681.png" alt="1562726996681"></p>
 
             </div>
             <hr/>
