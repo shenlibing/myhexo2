@@ -1,0 +1,1478 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="elastic, 小兵兵">
+    <meta name="description" content="安装elastic下载Elasticsearch 6.3.1 | Elastic
+
+解压[root@192 modules]# tar -zxvf elasticsearch-6.3.1.tar.gz启动报错一elasticsearch 为">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>elastic | 小兵兵</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">小兵兵</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">小兵兵</div>
+        <div class="logo-desc">
+            
+            言宜慢，心宜善
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/shenlibing/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/shenlibing/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        elastic
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/es/" target="_blank">
+                                <span class="chip bg-color">es</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/搜索引擎/" class="post-category" target="_blank">
+                                搜索引擎
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-07-08
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="安装elastic"><a href="#安装elastic" class="headerlink" title="安装elastic"></a>安装elastic</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="https://www.elastic.co/cn/downloads/past-releases/elasticsearch-6-3-1" target="_blank" rel="noopener">Elasticsearch 6.3.1 | Elastic</a></p>
+<p><img src="/.io//1562550013183.png" alt="1562550013183"></p>
+<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><pre><code>[root@192 modules]# tar -zxvf elasticsearch-6.3.1.tar.gz</code></pre><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><h3 id="报错一"><a href="#报错一" class="headerlink" title="报错一"></a>报错一</h3><p><code>elasticsearch</code> 为了安全性默认不允许<code>root</code> 用户来启动</p>
+<pre><code>[root@192 elasticsearch-6.3.1]# cd bin/
+[root@192 bin]# ./elasticsearch
+[2019-07-08T08:45:49,312][WARN ][o.e.b.ElasticsearchUncaughtExceptionHandler] [] uncaught exception in thread [main]
+org.elasticsearch.bootstrap.StartupException: java.lang.RuntimeException: can not run elasticsearch as root
+    at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:140) ~[elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:127) ~[elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) ~[elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) ~[elasticsearch-cli-6.3.1.jar:6.3.1]
+    at org.elasticsearch.cli.Command.main(Command.java:90) ~[elasticsearch-cli-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:93) ~[elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:86) ~[elasticsearch-6.3.1.jar:6.3.1]
+Caused by: java.lang.RuntimeException: can not run elasticsearch as root
+    at org.elasticsearch.bootstrap.Bootstrap.initializeNatives(Bootstrap.java:104) ~[elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:171) ~[elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:326) ~[elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:136) ~[elasticsearch-6.3.1.jar:6.3.1]
+    ... 6 more
+</code></pre><p>新建立<code>es</code>用户</p>
+<pre><code>[root@192 bin]# useradd es
+[root@192 bin]# pwd
+/opt/modules/elasticsearch-6.3.1/bin
+[root@192 bin]# cd
+[root@192 ~]# pwd
+/root
+[root@192 ~]# cd /opt/modules/elasticsearch-6.3.1
+[root@192 elasticsearch-6.3.1]# ll
+total 460
+drwxr-xr-x.  3 root root   4096 Jul  8 08:43 bin
+drwxr-xr-x.  2 root root   4096 Jul  8 08:45 config
+drwxr-xr-x.  2 root root   4096 Jun 30  2018 lib
+-rw-r--r--.  1 root root  13675 Jun 30  2018 LICENSE.txt
+drwxr-xr-x.  2 root root   4096 Jul  8 08:45 logs
+drwxr-xr-x. 17 root root   4096 Jun 30  2018 modules
+-rw-r--r--.  1 root root 416018 Jun 30  2018 NOTICE.txt
+drwxr-xr-x.  2 root root   4096 Jun 30  2018 plugins
+-rw-r--r--.  1 root root   8511 Jun 30  2018 README.textile</code></pre><h3 id="报错二"><a href="#报错二" class="headerlink" title="报错二"></a>报错二</h3><p>授权、启动</p>
+<pre><code>[root@192 elasticsearch-6.3.1]# chown -R es:es ./
+[root@192 elasticsearch-6.3.1]# ll
+total 460
+drwxr-xr-x.  3 es es   4096 Jul  8 08:43 bin
+drwxr-xr-x.  2 es es   4096 Jul  8 08:45 config
+drwxr-xr-x.  2 es es   4096 Jun 30  2018 lib
+-rw-r--r--.  1 es es  13675 Jun 30  2018 LICENSE.txt
+drwxr-xr-x.  2 es es   4096 Jul  8 08:45 logs
+drwxr-xr-x. 17 es es   4096 Jun 30  2018 modules
+-rw-r--r--.  1 es es 416018 Jun 30  2018 NOTICE.txt
+drwxr-xr-x.  2 es es   4096 Jun 30  2018 plugins
+-rw-r--r--.  1 es es   8511 Jun 30  2018 README.textile
+[root@192 elasticsearch-6.3.1]# su es
+[es@192 elasticsearch-6.3.1]$ ./bin/elasticsearch
+[2019-07-08T08:48:42,989][WARN ][o.e.b.JNANatives         ] unable to install syscall filter: 
+java.lang.UnsupportedOperationException: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed
+    at org.elasticsearch.bootstrap.SystemCallFilter.linuxImpl(SystemCallFilter.java:341) ~[elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.SystemCallFilter.init(SystemCallFilter.java:616) ~[elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.JNANatives.tryInstallSystemCallFilter(JNANatives.java:258) [elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.Natives.tryInstallSystemCallFilter(Natives.java:113) [elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.Bootstrap.initializeNatives(Bootstrap.java:109) [elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:171) [elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:326) [elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:136) [elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:127) [elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) [elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) [elasticsearch-cli-6.3.1.jar:6.3.1]
+    at org.elasticsearch.cli.Command.main(Command.java:90) [elasticsearch-cli-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:93) [elasticsearch-6.3.1.jar:6.3.1]
+    at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:86) [elasticsearch-6.3.1.jar:6.3.1]</code></pre><p>解决</p>
+<p>进入<code>/opt/modules/elasticsearch-6.3.1/config</code>目录，修改配置文件 <code>elasticsearch.yml</code>，末尾追加</p>
+<pre><code>bootstrap.memory_lock: false
+bootstrap.system_call_filter: false</code></pre><h3 id="报错三"><a href="#报错三" class="headerlink" title="报错三"></a>报错三</h3><p>用户最大文件描述符限制低于 65536 而抛出的异常</p>
+<p>用户最大的线程数限制低于 4096 而抛出的异常</p>
+<p>系统最大虚拟内存低于 262144 而抛出的异常</p>
+<pre><code>[es@192 elasticsearch-6.3.1]$ ./bin/elasticsearch
+[2019-07-08T08:56:38,934][INFO ][o.e.n.Node               ] [] initializing ...
+[2019-07-08T08:56:39,016][INFO ][o.e.e.NodeEnvironment    ] [zzp49gD] using [1] data paths, mounts [[/ (rootfs)]], net usable_space [9.2gb], net total_space [14.6gb], types [rootfs]
+[2019-07-08T08:56:39,016][INFO ][o.e.e.NodeEnvironment    ] [zzp49gD] heap size [989.8mb], compressed ordinary object pointers [true]
+[2019-07-08T08:56:39,017][INFO ][o.e.n.Node               ] [zzp49gD] node name derived from node ID [zzp49gDDT1yAkU_sqvvLdw]; set [node.name] to override
+[2019-07-08T08:56:39,018][INFO ][o.e.n.Node               ] [zzp49gD] version[6.3.1], pid[3815], build[default/tar/eb782d0/2018-06-29T21:59:26.107521Z], OS[Linux/2.6.32-642.el6.x86_64/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_202/25.202-b08]
+[2019-07-08T08:56:39,018][INFO ][o.e.n.Node               ] [zzp49gD] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=/tmp/elasticsearch.KQ6g6BOC, -XX:+HeapDumpOnOutOfMemoryError, -XX:HeapDumpPath=data, -XX:ErrorFile=logs/hs_err_pid%p.log, -XX:+PrintGCDetails, -XX:+PrintGCDateStamps, -XX:+PrintTenuringDistribution, -XX:+PrintGCApplicationStoppedTime, -Xloggc:logs/gc.log, -XX:+UseGCLogFileRotation, -XX:NumberOfGCLogFiles=32, -XX:GCLogFileSize=64m, -Des.path.home=/opt/modules/elasticsearch-6.3.1, -Des.path.conf=/opt/modules/elasticsearch-6.3.1/config, -Des.distribution.flavor=default, -Des.distribution.type=tar]
+[2019-07-08T08:56:40,833][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [aggs-matrix-stats]
+[2019-07-08T08:56:40,834][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [analysis-common]
+[2019-07-08T08:56:40,834][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [ingest-common]
+[2019-07-08T08:56:40,834][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [lang-expression]
+[2019-07-08T08:56:40,834][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [lang-mustache]
+[2019-07-08T08:56:40,834][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [lang-painless]
+[2019-07-08T08:56:40,834][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [mapper-extras]
+[2019-07-08T08:56:40,834][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [parent-join]
+[2019-07-08T08:56:40,834][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [percolator]
+[2019-07-08T08:56:40,835][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [rank-eval]
+[2019-07-08T08:56:40,835][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [reindex]
+[2019-07-08T08:56:40,835][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [repository-url]
+[2019-07-08T08:56:40,835][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [transport-netty4]
+[2019-07-08T08:56:40,835][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [tribe]
+[2019-07-08T08:56:40,835][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [x-pack-core]
+[2019-07-08T08:56:40,835][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [x-pack-deprecation]
+[2019-07-08T08:56:40,835][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [x-pack-graph]
+[2019-07-08T08:56:40,835][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [x-pack-logstash]
+[2019-07-08T08:56:40,835][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [x-pack-ml]
+[2019-07-08T08:56:40,835][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [x-pack-monitoring]
+[2019-07-08T08:56:40,836][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [x-pack-rollup]
+[2019-07-08T08:56:40,836][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [x-pack-security]
+[2019-07-08T08:56:40,836][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [x-pack-sql]
+[2019-07-08T08:56:40,836][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [x-pack-upgrade]
+[2019-07-08T08:56:40,836][INFO ][o.e.p.PluginsService     ] [zzp49gD] loaded module [x-pack-watcher]
+[2019-07-08T08:56:40,836][INFO ][o.e.p.PluginsService     ] [zzp49gD] no plugins loaded
+[2019-07-08T08:56:43,471][INFO ][o.e.x.s.a.s.FileRolesStore] [zzp49gD] parsed [0] roles from file [/opt/modules/elasticsearch-6.3.1/config/roles.yml]
+[2019-07-08T08:56:43,817][INFO ][o.e.x.m.j.p.l.CppLogMessageHandler] [controller/3894] [Main.cc@109] controller (64 bit): Version 6.3.1 (Build 4d0b8f0a0ef401) Copyright (c) 2018 Elasticsearch BV
+[2019-07-08T08:56:44,114][DEBUG][o.e.a.ActionModule       ] Using REST wrapper from plugin org.elasticsearch.xpack.security.Security
+[2019-07-08T08:56:44,331][INFO ][o.e.d.DiscoveryModule    ] [zzp49gD] using discovery type [zen]
+[2019-07-08T08:56:45,016][INFO ][o.e.n.Node               ] [zzp49gD] initialized
+[2019-07-08T08:56:45,016][INFO ][o.e.n.Node               ] [zzp49gD] starting ...
+[2019-07-08T08:56:45,173][INFO ][o.e.t.TransportService   ] [zzp49gD] publish_address {192.168.1.101:9300}, bound_addresses {192.168.1.101:9300}
+[2019-07-08T08:56:45,196][INFO ][o.e.b.BootstrapChecks    ] [zzp49gD] bound or publishing to a non-loopback address, enforcing bootstrap checks
+ERROR: [3] bootstrap checks failed
+[1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]
+[2]: max number of threads [1024] for user [es] is too low, increase to at least [4096]
+[3]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+[2019-07-08T08:56:45,223][INFO ][o.e.n.Node               ] [zzp49gD] stopping ...
+[2019-07-08T08:56:45,295][INFO ][o.e.n.Node               ] [zzp49gD] stopped
+[2019-07-08T08:56:45,295][INFO ][o.e.n.Node               ] [zzp49gD] closing ...
+[2019-07-08T08:56:45,307][INFO ][o.e.n.Node               ] [zzp49gD] closed
+[2019-07-08T08:56:45,313][INFO ][o.e.x.m.j.p.NativeController] Native controller process has stopped - no new native processes can be started
+</code></pre><p>解决户最大文件描述符限制低于 65536 而抛出的异常</p>
+<p>切换到<code>root</code>用户,进入<code>/etc/security/</code>目录，修改<code>limits.conf</code>文件，末尾追加</p>
+<pre><code>* hard nofile 65536
+* soft nofile 131072
+* hard nproc  4096
+* soft nproc  2048</code></pre><p>解决用户最大的线程数限制低于 4096 而抛出的异常</p>
+<p>切换到<code>root</code>用户,进入<code>/etc/security/limits.d</code>目录，修改<code>90-nproc.conf</code>文件</p>
+<pre><code>*          soft    nproc     4096
+root       soft    nproc     unlimited</code></pre><p>解决系统最大虚拟内存低于 262144 而抛出的异常</p>
+<p>修改<code>/etc/sysctl.conf</code>文件，末尾追加</p>
+<pre><code>vm.max_map_count=655360
+fs.file-max=655360</code></pre><h3 id="配置访问地址"><a href="#配置访问地址" class="headerlink" title="配置访问地址"></a>配置访问地址</h3><p>进入<code>/opt/modules/elasticsearch-6.3.1/config</code>目录，修改<code>elasticsearch.yml</code>文件</p>
+<p><img src="/.io//1562553937145.png" alt="1562553937145"></p>
+<p>访问</p>
+<pre><code>[es@192 elasticsearch-6.3.1]$ curl http://192.168.1.101:9200
+{
+  &quot;name&quot; : &quot;zzp49gD&quot;,
+  &quot;cluster_name&quot; : &quot;elasticsearch&quot;,
+  &quot;cluster_uuid&quot; : &quot;i0I9Oc2gQxOkc-jk4ZvEvw&quot;,
+  &quot;version&quot; : {
+    &quot;number&quot; : &quot;6.3.1&quot;,
+    &quot;build_flavor&quot; : &quot;default&quot;,
+    &quot;build_type&quot; : &quot;tar&quot;,
+    &quot;build_hash&quot; : &quot;eb782d0&quot;,
+    &quot;build_date&quot; : &quot;2018-06-29T21:59:26.107521Z&quot;,
+    &quot;build_snapshot&quot; : false,
+    &quot;lucene_version&quot; : &quot;7.3.1&quot;,
+    &quot;minimum_wire_compatibility_version&quot; : &quot;5.6.0&quot;,
+    &quot;minimum_index_compatibility_version&quot; : &quot;5.0.0&quot;
+  },
+  &quot;tagline&quot; : &quot;You Know, for Search&quot;
+}
+[es@192 elasticsearch-6.3.1]$ 
+</code></pre><p><img src="/.io//1562554028561.png" alt="1562554028561"></p>
+<h1 id="安装kibana"><a href="#安装kibana" class="headerlink" title="安装kibana"></a>安装kibana</h1><h2 id="下载-1"><a href="#下载-1" class="headerlink" title="下载"></a>下载</h2><p><a href="https://www.elastic.co/cn/downloads/past-releases/kibana-6-3-1" target="_blank" rel="noopener">Kibana 6.3.1 | Elastic</a></p>
+<p><img src="/.io//1562549955406.png" alt="1562549955406"></p>
+<h2 id="解压-1"><a href="#解压-1" class="headerlink" title="解压"></a>解压</h2><pre><code>[root@192 bin]# tar -zxvf kibana-6.3.1-linux-x86_64.tar.gz </code></pre><h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>进入</p>
+<pre><code>[root@192 bin]# cd kibana-6.3.1-linux-x86_64/config/</code></pre><p>修改<code>kibana.yml</code>配置文件</p>
+<p><img src="/.io//1562633630892.png" alt="1562633630892"></p>
+<h2 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h2><pre><code>[root@192 bin]# pwd
+/opt/modules/kibana-6.3.1-linux-x86_64/bin
+[root@192 bin]# nohup ./kibana &amp;
+[1] 3665
+[root@192 bin]# nohup: ignoring input and appending output to `nohup.out&#39;
+
+[root@192 bin]# ps -ef | grep node
+root       3665   3615 51 08:45 pts/0    00:00:25 ./../node/bin/node --no-warnings ./../src/cli
+root       3685   3615  0 08:46 pts/0    00:00:00 grep node
+</code></pre><h2 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h2><p><img src="/.io//1562633817600.png" alt="1562633817600"></p>
+<p><img src="/.io//1562633912937.png" alt="1562633912937"></p>
+<h2 id="操作es增删改查"><a href="#操作es增删改查" class="headerlink" title="操作es增删改查"></a>操作es增删改查</h2><p><a href="https://wiki.shileizcc.com/confluence/pages/viewpage.action?pageId=7897093" target="_blank" rel="noopener">ES 简单操作 - ELK - Wiki.Shileizcc.com</a></p>
+<p>增</p>
+<pre class=" language-json"><code class="language-json">PUT /movie_index/movie/<span class="token number">1</span>
+<span class="token punctuation">{</span>
+  <span class="token property">"id"</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token property">"name"</span><span class="token operator">:</span><span class="token string">"operation red sea"</span><span class="token punctuation">,</span>
+  <span class="token property">"doubanscore"</span><span class="token operator">:</span><span class="token number">8.5</span><span class="token punctuation">,</span>
+  <span class="token property">"actorList"</span><span class="token operator">:</span><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"id"</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token property">"name"</span><span class="token operator">:</span><span class="token string">"zhang yi"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"id"</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token property">"name"</span><span class="token operator">:</span><span class="token string">"hai qing"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"id"</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token property">"name"</span><span class="token operator">:</span><span class="token string">"zhang han yu"</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+<p>删</p>
+<pre><code>DELETE /movie_index/movie/1</code></pre><p>改</p>
+<p>和新增一样，<code>PUT</code>既可以新增，也可以修改</p>
+<pre><code>PUT /movie_index/movie/1
+{
+  &quot;id&quot;:2,
+  &quot;name&quot;:&quot;operation red sea&quot;,
+  &quot;doubanscore&quot;:8.5,
+  &quot;actorList&quot;:[
+    {
+      &quot;id&quot;:1,&quot;name&quot;:&quot;zhang yi&quot;
+    },
+    {
+      &quot;id&quot;:2,&quot;name&quot;:&quot;hai qing&quot;
+    },
+    {
+      &quot;id&quot;:3,&quot;name&quot;:&quot;zhang han yu&quot;
+    }
+
+    ]
+}</code></pre><p>查</p>
+<pre><code>GET /movie_index/_search</code></pre><h1 id="安装分词器analysis-ik"><a href="#安装分词器analysis-ik" class="headerlink" title="安装分词器analysis-ik"></a>安装分词器analysis-ik</h1><h2 id="下载-2"><a href="#下载-2" class="headerlink" title="下载"></a>下载</h2><p><a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v6.3.1" target="_blank" rel="noopener">Release v6.3.1 · medcl/elasticsearch-analysis-ik</a></p>
+<p><img src="/.io//1562719837250.png" alt="1562719837250"></p>
+<h2 id="解压、上传"><a href="#解压、上传" class="headerlink" title="解压、上传"></a>解压、上传</h2><p><img src="/.io//1562719919748.png" alt="1562719919748"></p>
+<pre><code>[root@192 ~]# cd /opt/modules/elasticsearch-6.3.1/plugins/
+[root@192 plugins]# ll
+total 4
+drwxr-xr-x. 3 root root 4096 Jul 10 08:51 elasticsearch-analysis-ik-6.3.1
+[root@192 plugins]# 
+</code></pre><h2 id="重启es"><a href="#重启es" class="headerlink" title="重启es"></a>重启es</h2><pre><code>[root@192 bin]# su es
+[es@192 bin]$ nohup ./elasticsearch &amp;
+[1] 4002
+[es@192 bin]$ nohup: ignoring input and appending output to `nohup.out&#39;
+
+[es@192 bin]$ ps -ef|grep elastic
+es         4002   3987 99 08:45 pts/0    00:00:25 /usr/java/jdk1.8.0_202-amd64/bin/java -Xms1g -Xmx1g -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djna.nosys=true -XX:-OmitStackTraceInFastThrow -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dlog4j.shutdownHookEnabled=false -Dlog4j2.disable.jmx=true -Djava.io.tmpdir=/tmp/elasticsearch.iMX34Qx6 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=data -XX:ErrorFile=logs/hs_err_pid%p.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintTenuringDistribution -XX:+PrintGCApplicationStoppedTime -Xloggc:logs/gc.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=32 -XX:GCLogFileSize=64m -Des.path.home=/opt/modules/elasticsearch-6.3.1 -Des.path.conf=/opt/modules/elasticsearch-6.3.1/config -Des.distribution.flavor=default -Des.distribution.type=tar -cp /opt/modules/elasticsearch-6.3.1/lib/* org.elasticsearch.bootstrap.Elasticsearch
+es         4081   4002  0 08:45 pts/0    00:00:00 /opt/modules/elasticsearch-6.3.1/modules/x-pack/x-pack-ml/platform/linux-x86_64/bin/controller
+es         4092   3987  0 08:45 pts/0    00:00:00 grep elastic
+[es@192 bin]$ kill -9 4002
+[es@192 bin]$ ps -ef|grep elastic
+es         4235   3987  0 08:54 pts/0    00:00:00 grep elastic
+[2]+  Killed                  nohup ./kibana
+[es@192 bin]$ cd /opt/modules/elasticsearch-6.3.1/bin/
+[es@192 bin]$ nohup ./elasticsearch &amp;
+[1] 4238
+[es@192 bin]$ nohup: ignoring input and appending output to `nohup.out&#39;
+
+[es@192 bin]$ ps -ef|grep elastic
+es         4238   3987 99 08:54 pts/0    00:00:15 /usr/java/jdk1.8.0_202-amd64/bin/java -Xms1g -Xmx1g -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djna.nosys=true -XX:-OmitStackTraceInFastThrow -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dlog4j.shutdownHookEnabled=false -Dlog4j2.disable.jmx=true -Djava.io.tmpdir=/tmp/elasticsearch.zw6LMXqV -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=data -XX:ErrorFile=logs/hs_err_pid%p.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintTenuringDistribution -XX:+PrintGCApplicationStoppedTime -Xloggc:logs/gc.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=32 -XX:GCLogFileSize=64m -Des.path.home=/opt/modules/elasticsearch-6.3.1 -Des.path.conf=/opt/modules/elasticsearch-6.3.1/config -Des.distribution.flavor=default -Des.distribution.type=tar -cp /opt/modules/elasticsearch-6.3.1/lib/* org.elasticsearch.bootstrap.Elasticsearch
+es         4317   4238  0 08:54 pts/0    00:00:00 /opt/modules/elasticsearch-6.3.1/modules/x-pack/x-pack-ml/platform/linux-x86_64/bin/controller
+es         4325   3987  0 08:54 pts/0    00:00:00 grep elastic
+[es@192 bin]$ cd /opt/modules/kibana-6.3.1-linux-x86_64/bin/
+[es@192 bin]$ nohup  ./kibana &amp;
+[2] 4384
+[es@192 bin]$ nohup: ignoring input and appending output to `nohup.out&#39;
+
+[es@192 bin]$ ps -ef|grep node
+es         4384   3987 77 08:55 pts/0    00:00:06 ./../node/bin/node --no-warnings ./../src/cli
+es         4396   3987  0 08:55 pts/0    00:00:00 grep node
+</code></pre><h2 id="重启kibana"><a href="#重启kibana" class="headerlink" title="重启kibana"></a>重启kibana</h2><pre><code>[es@192 bin]$ cd /opt/modules/kibana-6.3.1-linux-x86_64/bin/
+[es@192 bin]$ nohup ./kibana &amp;
+[2] 4155
+[es@192 bin]$ nohup: ignoring input and appending output to `nohup.out&#39;
+
+[es@192 bin]$ ps -ef|grep node
+es         4155   3987 56 08:46 pts/0    00:00:04 ./../node/bin/node --no-warnings ./../src/cli
+es         4167   3987  0 08:46 pts/0    00:00:00 grep node
+[es@192 bin]$ kill -9 4155
+[es@192 bin]$ ps -ef|grep node
+es         4237   3987  0 08:54 pts/0    00:00:00 grep node
+
+
+</code></pre><h2 id="访问es"><a href="#访问es" class="headerlink" title="访问es"></a>访问es</h2><p><img src="/.io//1562720371754.png" alt="1562720371754"></p>
+<h2 id="访问kibana"><a href="#访问kibana" class="headerlink" title="访问kibana"></a>访问kibana</h2><h3 id="入分词器前"><a href="#入分词器前" class="headerlink" title="入分词器前"></a>入分词器前</h3><p><img src="/.io//1562720423800.png" alt="1562720423800"></p>
+<h3 id="加入分词器后"><a href="#加入分词器后" class="headerlink" title="加入分词器后"></a>加入分词器后</h3><h4 id="简易分词器"><a href="#简易分词器" class="headerlink" title="简易分词器"></a>简易分词器</h4><p><img src="/.io//1562720485967.png" alt="1562720485967"></p>
+<p><img src="/.io//1562720869751.png" alt="1562720869751"></p>
+<h4 id="尽最大可能分词器"><a href="#尽最大可能分词器" class="headerlink" title="尽最大可能分词器"></a>尽最大可能分词器</h4><p><img src="/.io//1562720609375.png" alt="1562720609375"></p>
+<p><img src="/.io//1562720837016.png" alt="1562720837016"></p>
+<h1 id="es集群"><a href="#es集群" class="headerlink" title="es集群"></a>es集群</h1><h2 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h2><p>克隆一个已经安装好<code>elastic、kibana、analysis-ik</code>的机器</p>
+<p>虚拟机—-快照—拍摄快照</p>
+<p><img src="/.io//1562721630555.png" alt="1562721630555"></p>
+<p>虚拟机—管理—克隆—现有快照</p>
+<p><img src="/.io//1562721733540.png" alt="1562721733540"></p>
+<p><img src="/.io//1562721751826.png" alt="1562721751826"></p>
+<p><img src="/.io//1562721992380.png" alt="1562721992380"></p>
+<h2 id="修改IP"><a href="#修改IP" class="headerlink" title="修改IP"></a>修改IP</h2><p>修改克隆后机器102的主机名、IP地址、硬件Mac地址</p>
+<p>参考</p>
+<p><a href="http://localhost:4000/myhexo/2019/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip/" target="_blank" rel="noopener">虚拟机配置静态ip | 小兵兵</a></p>
+<h2 id="集群配置es"><a href="#集群配置es" class="headerlink" title="集群配置es"></a>集群配置es</h2><h3 id="修改配置文件-1"><a href="#修改配置文件-1" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><h4 id="修改101机器"><a href="#修改101机器" class="headerlink" title="修改101机器"></a>修改101机器</h4><p>进入<code>/opt/modules/elasticsearch-6.3.1/config</code>目录，修改<code>elasticsearch.yml</code>配置文件</p>
+<pre class=" language-yml"><code class="language-yml"># ======================== Elasticsearch Configuration =========================
+#
+# NOTE: Elasticsearch comes with reasonable defaults for most settings.
+#       Before you set out to tweak and tune the configuration, make sure you
+#       understand what are you trying to accomplish and the consequences.
+#
+# The primary way of configuring a node is via this file. This template lists
+# the most important settings you may want to configure for a production cluster.
+#
+# Please consult the documentation for further information on configuration options:
+# https://www.elastic.co/guide/en/elasticsearch/reference/index.html
+#
+# ---------------------------------- Cluster -----------------------------------
+#
+# Use a descriptive name for your cluster:
+#
+cluster.name: my-application
+#
+# ------------------------------------ Node ------------------------------------
+#
+# Use a descriptive name for the node:
+#
+node.name: node-1
+#
+# Add custom attributes to the node:
+#
+#node.attr.rack: r1
+#
+# ----------------------------------- Paths ------------------------------------
+#
+# Path to directory where to store the data (separate multiple locations by comma):
+#
+node.master: true
+node.data: true
+path.data: /opt/data
+#
+# Path to log files:
+#
+path.logs: /opt/logs
+#
+# ----------------------------------- Memory -----------------------------------
+#
+# Lock the memory on startup:
+#
+#bootstrap.memory_lock: true
+#
+# Make sure that the heap size is set to about half the memory available
+# on the system and that the owner of the process is allowed to use this
+# limit.
+#
+# Elasticsearch performs poorly when the system is swapping the memory.
+#
+# ---------------------------------- Network -----------------------------------
+#
+# Set the bind address to a specific IP (IPv4 or IPv6):
+#
+network.host: 192.168.1.101
+#
+# Set a custom port for HTTP:
+#
+http.port: 9200
+transport.tcp.port: 9300
+#
+# For more information, consult the network module documentation.
+#
+# --------------------------------- Discovery ----------------------------------
+#
+# Pass an initial list of hosts to perform discovery when new node is started:
+# The default list of hosts is ["127.0.0.1", "[::1]"]
+#
+discovery.zen.ping.unicast.hosts: ["192.168.1.102"]
+#
+# Prevent the "split brain" by configuring the majority of nodes (total number of master-eligible nodes / 2 + 1):
+#
+discovery.zen.minimum_master_nodes: 2
+#
+# For more information, consult the zen discovery module documentation.
+#
+# ---------------------------------- Gateway -----------------------------------
+#
+# Block initial recovery after a full cluster restart until N nodes are started:
+#
+#gateway.recover_after_nodes: 3
+#
+# For more information, consult the gateway module documentation.
+#
+# ---------------------------------- Various -----------------------------------
+#
+# Require explicit names when deleting indices:
+#
+#action.destructive_requires_name: true
+
+bootstrap.memory_lock: false
+bootstrap.system_call_filter: false
+</code></pre>
+<p>建立数据存储目录、日志目录</p>
+<pre><code>[root@192 config]# cd /opt/
+[root@192 opt]# mkdir data
+[root@192 opt]# mkdir logs
+[root@192 opt]# ll
+total 16
+drwxr-xr-x. 2 root root 4096 Jul 10 09:58 data
+drwxr-xr-x. 2 root root 4096 Jul 10 09:58 logs
+drwxr-xr-x. 4 root root 4096 Jul  9 08:42 modules
+drwxr-xr-x. 2 root root 4096 Mar 26  2015 rh
+[root@192 opt]# chown es:es -R data/ logs/
+[root@192 opt]# ll
+total 16
+drwxr-xr-x. 2 es   es   4096 Jul 10 09:58 data
+drwxr-xr-x. 2 es   es   4096 Jul 10 09:58 logs
+drwxr-xr-x. 4 root root 4096 Jul  9 08:42 modules
+drwxr-xr-x. 2 root root 4096 Mar 26  2015 rh
+</code></pre><h4 id="修改102机器"><a href="#修改102机器" class="headerlink" title="修改102机器"></a>修改102机器</h4><p>进入<code>/opt/modules/elasticsearch-6.3.1/config</code>目录，修改<code>elasticsearch.yml</code>配置文件</p>
+<pre class=" language-yml"><code class="language-yml"># ======================== Elasticsearch Configuration =========================
+#
+# NOTE: Elasticsearch comes with reasonable defaults for most settings.
+#       Before you set out to tweak and tune the configuration, make sure you
+#       understand what are you trying to accomplish and the consequences.
+#
+# The primary way of configuring a node is via this file. This template lists
+# the most important settings you may want to configure for a production cluster.
+#
+# Please consult the documentation for further information on configuration options:
+# https://www.elastic.co/guide/en/elasticsearch/reference/index.html
+#
+# ---------------------------------- Cluster -----------------------------------
+#
+# Use a descriptive name for your cluster:
+#
+cluster.name: my-application
+#
+# ------------------------------------ Node ------------------------------------
+#
+# Use a descriptive name for the node:
+#
+node.name: node-2
+#
+# Add custom attributes to the node:
+#
+#node.attr.rack: r1
+#
+# ----------------------------------- Paths ------------------------------------
+#
+# Path to directory where to store the data (separate multiple locations by comma):
+#
+node.master: true
+node.data: true
+path.data: /opt/data
+#
+# Path to log files:
+#
+path.logs: /opt/logs
+#
+# ----------------------------------- Memory -----------------------------------
+#
+# Lock the memory on startup:
+#
+#bootstrap.memory_lock: true
+#
+# Make sure that the heap size is set to about half the memory available
+# on the system and that the owner of the process is allowed to use this
+# limit.
+#
+# Elasticsearch performs poorly when the system is swapping the memory.
+#
+# ---------------------------------- Network -----------------------------------
+#
+# Set the bind address to a specific IP (IPv4 or IPv6):
+#
+network.host: 192.168.1.102
+#
+# Set a custom port for HTTP:
+#
+http.port: 9200
+transport.tcp.port: 9300
+#
+# For more information, consult the network module documentation.
+#
+# --------------------------------- Discovery ----------------------------------
+#
+# Pass an initial list of hosts to perform discovery when new node is started:
+# The default list of hosts is ["127.0.0.1", "[::1]"]
+#
+discovery.zen.ping.unicast.hosts: ["192.168.1.101"]
+#
+# Prevent the "split brain" by configuring the majority of nodes (total number of master-eligible nodes / 2 + 1):
+#
+discovery.zen.minimum_master_nodes: 2
+#
+# For more information, consult the zen discovery module documentation.
+#
+# ---------------------------------- Gateway -----------------------------------
+#
+# Block initial recovery after a full cluster restart until N nodes are started:
+#
+#gateway.recover_after_nodes: 3
+#
+# For more information, consult the gateway module documentation.
+#
+# ---------------------------------- Various -----------------------------------
+#
+# Require explicit names when deleting indices:
+#
+#action.destructive_requires_name: true
+
+bootstrap.memory_lock: false
+bootstrap.system_call_filter: false
+</code></pre>
+<p>建立数据存储目录、日志目录</p>
+<pre><code>[root@192 config]# cd /opt/
+[root@192 opt]# mkdir data
+[root@192 opt]# mkdir logs
+[root@192 opt]# ll
+total 16
+drwxr-xr-x. 2 root root 4096 Jul 10 09:58 data
+drwxr-xr-x. 2 root root 4096 Jul 10 09:58 logs
+drwxr-xr-x. 4 root root 4096 Jul  9 08:42 modules
+drwxr-xr-x. 2 root root 4096 Mar 26  2015 rh
+[root@192 opt]# chown es:es -R data/ logs/
+[root@192 opt]# ll
+total 16
+drwxr-xr-x. 2 es   es   4096 Jul 10 09:58 data
+drwxr-xr-x. 2 es   es   4096 Jul 10 09:58 logs
+drwxr-xr-x. 4 root root 4096 Jul  9 08:42 modules
+drwxr-xr-x. 2 root root 4096 Mar 26  2015 rh
+</code></pre><h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><h4 id="重启101机器"><a href="#重启101机器" class="headerlink" title="重启101机器"></a>重启101机器</h4><pre><code>[es@192 bin]$ pwd
+/opt/modules/elasticsearch-6.3.1/bin
+[es@192 bin]$ ps -ef | grep elastic
+es         3795   3638  0 10:08 pts/0    00:00:00 grep elastic
+[1]+  Killed                  nohup ./elasticsearch
+[es@192 bin]$ nohup ./elasticsearch &amp;
+[1] 3796
+[es@192 bin]$ nohup: ignoring input and appending output to `nohup.out&#39;
+
+[es@192 bin]$ ps -ef | grep elastic
+es         3796   3638 99 10:09 pts/0    00:00:07 /usr/java/jdk1.8.0_202-amd64/bin/java -Xms1g -Xmx1g -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djna.nosys=true -XX:-OmitStackTraceInFastThrow -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dlog4j.shutdownHookEnabled=false -Dlog4j2.disable.jmx=true -Djava.io.tmpdir=/tmp/elasticsearch.wZB2cw0p -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=data -XX:ErrorFile=logs/hs_err_pid%p.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintTenuringDistribution -XX:+PrintGCApplicationStoppedTime -Xloggc:logs/gc.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=32 -XX:GCLogFileSize=64m -Des.path.home=/opt/modules/elasticsearch-6.3.1 -Des.path.conf=/opt/modules/elasticsearch-6.3.1/config -Des.distribution.flavor=default -Des.distribution.type=tar -cp /opt/modules/elasticsearch-6.3.1/lib/* org.elasticsearch.bootstrap.Elasticsearch
+es         3875   3796  0 10:09 pts/0    00:00:00 /opt/modules/elasticsearch-6.3.1/modules/x-pack/x-pack-ml/platform/linux-x86_64/bin/controller
+es         3881   3638  0 10:09 pts/0    00:00:00 grep elastic
+</code></pre><h4 id="重启102机器"><a href="#重启102机器" class="headerlink" title="重启102机器"></a>重启102机器</h4><pre><code>[es@192 bin]$ pwd
+/opt/modules/elasticsearch-6.3.1/bin
+[es@192 bin]$ ps -ef|grep elastic
+es         4284   3992  0 10:10 pts/1    00:00:00 grep elastic
+[es@192 bin]$ nohup ./elasticsearch &amp;
+[1] 4285
+[es@192 bin]$ nohup: ignoring input and appending output to `nohup.out&#39;
+
+[es@192 bin]$ ps -ef|grep elastic
+es         4285   3992 99 10:10 pts/1    00:00:04 /usr/java/jdk1.8.0_202-amd64/bin/java -Xms1g -Xmx1g -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djna.nosys=true -XX:-OmitStackTraceInFastThrow -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dlog4j.shutdownHookEnabled=false -Dlog4j2.disable.jmx=true -Djava.io.tmpdir=/tmp/elasticsearch.JmqOtV9r -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=data -XX:ErrorFile=logs/hs_err_pid%p.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintTenuringDistribution -XX:+PrintGCApplicationStoppedTime -Xloggc:logs/gc.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=32 -XX:GCLogFileSize=64m -Des.path.home=/opt/modules/elasticsearch-6.3.1 -Des.path.conf=/opt/modules/elasticsearch-6.3.1/config -Des.distribution.flavor=default -Des.distribution.type=tar -cp /opt/modules/elasticsearch-6.3.1/lib/* org.elasticsearch.bootstrap.Elasticsearch
+es         4364   4285  0 10:10 pts/1    00:00:00 /opt/modules/elasticsearch-6.3.1/modules/x-pack/x-pack-ml/platform/linux-x86_64/bin/controller
+es         4370   3992  0 10:10 pts/1    00:00:00 grep elastic
+[es@192 bin]$ ll
+</code></pre><h3 id="访问-1"><a href="#访问-1" class="headerlink" title="访问"></a>访问</h3><h4 id="访问101机器"><a href="#访问101机器" class="headerlink" title="访问101机器"></a>访问101机器</h4><p><img src="/.io//1562724690806.png" alt="1562724690806"></p>
+<h4 id="访问102机器"><a href="#访问102机器" class="headerlink" title="访问102机器"></a>访问102机器</h4><p><img src="/.io//1562724717530.png" alt="1562724717530"></p>
+<h2 id="集群管理工具cerebro"><a href="#集群管理工具cerebro" class="headerlink" title="集群管理工具cerebro"></a>集群管理工具cerebro</h2><p><a href="https://article.itxueyuan.com/3wEvb" target="_blank" rel="noopener">插件【head,bigdesk,cerebro[kopf]】安装 </a></p>
+<h3 id="下载-3"><a href="#下载-3" class="headerlink" title="下载"></a>下载</h3><p><a href="https://github.com/lmenezes/cerebro/releases" target="_blank" rel="noopener">Releases · lmenezes/cerebro</a></p>
+<p><img src="/.io//1562725274935.png" alt="1562725274935"></p>
+<h3 id="上传、解压"><a href="#上传、解压" class="headerlink" title="上传、解压"></a>上传、解压</h3><p><img src="/.io//1562725682229.png" alt="1562725682229"></p>
+<pre><code>[root@192 modules]# cd /opt/
+[root@192 opt]# mkdir soft
+[root@192 opt]# ll
+total 20
+drwxr-xr-x. 3 es   es   4096 Jul 10 10:01 data
+drwxr-xr-x. 2 es   es   4096 Jul 10 10:01 logs
+drwxr-xr-x. 4 root root 4096 Jul 10 10:23 modules
+drwxr-xr-x. 2 root root 4096 Mar 26  2015 rh
+drwxr-xr-x. 2 root root 4096 Jul 10 10:25 soft
+[root@192 opt]# cd /opt/modules/
+[root@192 modules]# ll
+total 581928
+-rw-r--r--.  1 root root  52397010 Jul 10 10:23 cerebro-0.8.3.tgz
+drwxr-xr-x.  9 es   es        4096 Jul  9 17:16 elasticsearch-6.3.1
+-rw-r--r--.  1 root root  91429350 Jul  8 08:42 elasticsearch-6.3.1.tar.gz
+-rwxrwxrwx.  1 root root 178418154 Jul  7 21:08 jdk-8u202-linux-x64.rpm
+drwxrwxr-x. 11 es   es        4096 Jun 30  2018 kibana-6.3.1-linux-x86_64
+-rw-r--r--.  1 root root 205397076 Jul  8 08:42 kibana-6.3.1-linux-x86_64.tar.gz
+-rw-r--r--.  1 root root  17855952 Jun  8 20:04 MySQL-client-5.5.48-1.linux2.6.x86_64.rpm
+-rw-r--r--.  1 root root  50372369 Jun  8 20:24 MySQL-server-5.5.48-1.linux2.6.x86_64.rpm
+[root@192 modules]# tar -zxvf cerebro-0.8.3.tgz -C /opt/soft/
+</code></pre><h3 id="启动-2"><a href="#启动-2" class="headerlink" title="启动"></a>启动</h3><pre><code>[root@192 modules]# cd /opt/soft/
+[root@192 soft]# ll
+total 4
+drwxr-xr-x. 5 503 games 4096 Apr  5 16:48 cerebro-0.8.3
+[root@192 soft]# cd cerebro-0.8.3/
+[root@192 cerebro-0.8.3]# cd bin/
+[root@192 bin]# ll
+total 20
+-rwxr-xr-x. 1 503 games 9497 Apr  5 16:48 cerebro
+-rwxr-xr-x. 1 503 games 4970 Apr  5 16:48 cerebro.bat
+[root@192 bin]# nohup ./cerebro &amp;
+[1] 4030
+[root@192 bin]# nohup: ignoring input and appending output to `nohup.out&#39;</code></pre><h3 id="访问-2"><a href="#访问-2" class="headerlink" title="访问"></a>访问</h3><p><img src="/.io//1562725889336.png" alt="1562725889336"></p>
+<p><img src="/.io//1562725925581.png" alt="1562725925581"></p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>建立一条数据</p>
+<p>启动kibana，访问添加数据</p>
+<pre><code>[root@192 modules]# cd /opt/modules/kibana-6.3.1-linux-x86_64/bin/
+[root@192 bin]# ll
+total 948
+-rwxr-xr-x. 1 es es    632 Jun 30  2018 kibana
+-rwxr-xr-x. 1 es es    588 Jun 30  2018 kibana-keystore
+-rwxr-xr-x. 1 es es    639 Jun 30  2018 kibana-plugin
+-rw-------. 1 es es 952696 Jul 10 09:17 nohup.out
+[root@192 bin]# su es
+[es@192 bin]$ nohup ./kibana &amp;
+[1] 4434
+[es@192 bin]$ nohup: ignoring input and appending output to `nohup.out&#39;
+</code></pre><p><img src="/.io//1562726914934.png" alt="1562726914934"></p>
+<p><code>cerebro</code>管理工具查看</p>
+<p><img src="/.io//1562726996681.png" alt="1562726996681"></p>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《elastic》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/08/elastic/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                shenlibing
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/07/30/java中的锁/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="java中的锁">
+                        
+                        <span class="card-title">java中的锁</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            引言在java单线程中，并不会出现资源抢夺的现象，但是在多线程并发中，会出现资源抢夺现象。为了避免这种情况需要上锁
+分类可重入锁，又名递归锁指的是同一线程外层函数获得锁之后，内层递归函数仍然能获取该锁的代码，在同一个线程在外层方法获取锁的时
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java基础/" class="post-category" target="_blank">
+                                    java基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/锁/" target="_blank">
+                        <span class="chip bg-color">锁</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/07/06/压力测试工具ab/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="压力测试工具ab">
+                        
+                        <span class="card-title">压力测试工具ab</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            压力测试工具ab下载Apache Haus Downloads
+
+解压
+测试-c代表并发数
+-n代表请求总次数
+
+C:\Users\shenlibing\Downloads\httpd-2.4.34-o102o-x64-vc14\Apach
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/测试/" class="post-category" target="_blank">
+                                    测试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ab/" target="_blank">
+                        <span class="chip bg-color">ab</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1,h2, h3, h4,h5,h6'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1,h2, h3, h4,h5,h6').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://github.com/shenlibing" target="_blank">shenlibing</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
