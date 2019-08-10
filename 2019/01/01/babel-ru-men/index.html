@@ -418,7 +418,7 @@ Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        331
+                        353
                     </div>
                     
 
@@ -456,18 +456,18 @@ Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a
 &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
 &quot;build&quot;: &quot;babel src -d src_build&quot;
   },</code></pre><p>结果</p>
-<p><img src="https://i.imgur.com/IRIhf5S.png" alt></p>
+<p><img src="/.io//%E5%AE%89%E8%A3%85%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96.png" alt></p>
 <p>4）运行脚本命令</p>
 <pre><code>D:\mytest\babel&gt;npm run build</code></pre><p>此时并没有成功的将es6的语法转成es5</p>
-<p><img src="https://i.imgur.com/fio2XsV.png" alt></p>
+<p><img src="/.io//%E7%BC%96%E8%AF%91%E5%89%8D%E5%90%8E%E6%AF%94%E5%AF%B9.png" alt></p>
 <p>5）添加.babelrc文件</p>
 <p>Great! You’ve configured Babel but you haven’t made it actually do anything. Create a .babelrc config in your project root and enable some plugins.</p>
 <p>To start, you can use the env preset, which enables transforms for ES2015+</p>
 <pre><code>D:\mytest\babel&gt;npm install @babel/preset-env --save-dev</code></pre><p>结果</p>
-<p><img src="https://i.imgur.com/S1zb6x4.png" alt></p>
-<p><img src="https://i.imgur.com/t0f2DeM.png" alt></p>
+<p>![](/安装项目依赖 (2).png)</p>
+<p>![](/新建.babelrc文件 .png)</p>
 <p>6）重新运行脚本命令</p>
-<pre><code>D:\mytest\babel&gt;npm run build</code></pre><p><img src="https://i.imgur.com/BKUMyyi.png" alt></p>
+<pre><code>D:\mytest\babel&gt;npm run build</code></pre><p>![](/编译前后比对 (2).png)</p>
 <p>7)使用编译后的js</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
