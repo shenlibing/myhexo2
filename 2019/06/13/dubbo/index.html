@@ -438,49 +438,49 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="dubbo环境搭建"><a href="#dubbo环境搭建" class="headerlink" title="dubbo环境搭建"></a>dubbo环境搭建</h1><h2 id="安装zookeeper"><a href="#安装zookeeper" class="headerlink" title="安装zookeeper"></a>安装zookeeper</h2><h3 id="下载zookeeper"><a href="#下载zookeeper" class="headerlink" title="下载zookeeper"></a>下载zookeeper</h3><p><a href="https://archive.apache.org/dist/zookeeper/zookeeper-3.4.13/" target="_blank" rel="noopener">Index of /dist/zookeeper/zookeeper-3.4.13</a></p>
-<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><p><img src="/.io//1560396996149.png" alt="1560396996149"></p>
+<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560396996149.png" alt="1560396996149"></p>
 <h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>进入<code>C:\Users\shenlibing\Downloads\zookeeper-3.4.13\conf</code>将<code>conf</code>下的<code>zoo_sample.cfg</code>复制一份改名为<code>zoo.cfg</code>即可</p>
-<p><img src="/.io//1560406178201.png" alt="1560406178201"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560406178201.png" alt="1560406178201"></p>
 <ul>
 <li><p><code>dataDir</code> 临时数据存储的目录（可写相对路径）</p>
 </li>
 <li><p><code>clientPort=2181</code>   <code>zookeeper</code>的端口号</p>
 </li>
 </ul>
-<p><img src="/.io//1560396968926.png" alt="1560396968926"></p>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p><img src="/.io//1560406513211.png" alt="1560406513211"></p>
-<h4 id="开启服务端"><a href="#开启服务端" class="headerlink" title="开启服务端"></a>开启服务端</h4><p><img src="/.io//1560397123787.png" alt="1560397123787"></p>
-<h4 id="开启客户端"><a href="#开启客户端" class="headerlink" title="开启客户端"></a>开启客户端</h4><p><img src="/.io//1560406459868.png" alt="1560406459868"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560396968926.png" alt="1560396968926"></p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560406513211.png" alt="1560406513211"></p>
+<h4 id="开启服务端"><a href="#开启服务端" class="headerlink" title="开启服务端"></a>开启服务端</h4><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560397123787.png" alt="1560397123787"></p>
+<h4 id="开启客户端"><a href="#开启客户端" class="headerlink" title="开启客户端"></a>开启客户端</h4><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560406459868.png" alt="1560406459868"></p>
 <h2 id="安装dubbo-admin管理控制台"><a href="#安装dubbo-admin管理控制台" class="headerlink" title="安装dubbo-admin管理控制台"></a>安装dubbo-admin管理控制台</h2><p><code>dubbo</code>本身并不是一个服务软件。它其实就是一个<code>jar</code>包能够帮你的<code>java</code>程序连接到<code>zookeeper</code>，并利用<code>zookeeper</code>消费、提供服务。</p>
 <p>但是为了让用户更好的管理监控众多的<code>dubbo</code>服务，官方提供了一个可视化的监控程序，不过这个监控即使不装也不影响使用。</p>
 <h3 id="下载dubbo-admin"><a href="#下载dubbo-admin" class="headerlink" title="下载dubbo-admin"></a>下载dubbo-admin</h3><p><a href="https://github.com/apache/dubbo-admin/tree/master" target="_blank" rel="noopener">apache/dubbo-admin at master</a></p>
-<p><img src="/.io//1560406775445.png" alt="1560406775445"></p>
-<h3 id="解压-1"><a href="#解压-1" class="headerlink" title="解压"></a>解压</h3><p><img src="/.io//1560407418522.png" alt="1560407418522"></p>
-<h3 id="修改dubbo-admin配置"><a href="#修改dubbo-admin配置" class="headerlink" title="修改dubbo-admin配置"></a>修改dubbo-admin配置</h3><p><img src="/.io//1560407528940.png" alt="1560407528940"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560406775445.png" alt="1560406775445"></p>
+<h3 id="解压-1"><a href="#解压-1" class="headerlink" title="解压"></a>解压</h3><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560407418522.png" alt="1560407418522"></p>
+<h3 id="修改dubbo-admin配置"><a href="#修改dubbo-admin配置" class="headerlink" title="修改dubbo-admin配置"></a>修改dubbo-admin配置</h3><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560407528940.png" alt="1560407528940"></p>
 <p>指定<code>zookeeper</code>地址</p>
-<p><img src="/.io//1560407565437.png" alt="1560407565437"></p>
-<h3 id="打包dubbo-admin"><a href="#打包dubbo-admin" class="headerlink" title="打包dubbo-admin"></a>打包dubbo-admin</h3><pre><code>mvn clean package -Dmaven.test.skip=true </code></pre><p><img src="/.io//1560407882961.png" alt="1560407882961"></p>
-<h3 id="运行dubbo-admin"><a href="#运行dubbo-admin" class="headerlink" title="运行dubbo-admin"></a>运行dubbo-admin</h3><pre><code>java -jar dubbo-admin-0.0.1-SNAPSHOT.jar</code></pre><p><img src="/.io//1560407980878.png" alt="1560407980878"></p>
-<p><img src="/.io//1560408182379.png" alt="1560408182379"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560407565437.png" alt="1560407565437"></p>
+<h3 id="打包dubbo-admin"><a href="#打包dubbo-admin" class="headerlink" title="打包dubbo-admin"></a>打包dubbo-admin</h3><pre><code>mvn clean package -Dmaven.test.skip=true </code></pre><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560407882961.png" alt="1560407882961"></p>
+<h3 id="运行dubbo-admin"><a href="#运行dubbo-admin" class="headerlink" title="运行dubbo-admin"></a>运行dubbo-admin</h3><pre><code>java -jar dubbo-admin-0.0.1-SNAPSHOT.jar</code></pre><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560407980878.png" alt="1560407980878"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560408182379.png" alt="1560408182379"></p>
 <h3 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h3><p><a href="http://localhost:7001，默认使用`root/root" target="_blank" rel="noopener">http://localhost:7001，默认使用`root/root</a> `登陆</p>
-<p><img src="/.io//1560408254046.png" alt="1560408254046"></p>
-<h2 id="dubbo-helloworld"><a href="#dubbo-helloworld" class="headerlink" title="dubbo-helloworld"></a>dubbo-helloworld</h2><h3 id="创建订单服务web模块"><a href="#创建订单服务web模块" class="headerlink" title="创建订单服务web模块"></a>创建订单服务web模块</h3><p><img src="/.io//1560412993991.png" alt="1560412993991"></p>
-<p><img src="/.io//1560413153432.png" alt="1560413153432"></p>
-<h3 id="用户服务service模块"><a href="#用户服务service模块" class="headerlink" title="用户服务service模块"></a>用户服务service模块</h3><p><img src="/.io//1560412993991.png" alt="1560412993991"></p>
-<p><img src="/.io//1560413103016.png" alt="1560413103016"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560408254046.png" alt="1560408254046"></p>
+<h2 id="dubbo-helloworld"><a href="#dubbo-helloworld" class="headerlink" title="dubbo-helloworld"></a>dubbo-helloworld</h2><h3 id="创建订单服务web模块"><a href="#创建订单服务web模块" class="headerlink" title="创建订单服务web模块"></a>创建订单服务web模块</h3><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560412993991.png" alt="1560412993991"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560413153432.png" alt="1560413153432"></p>
+<h3 id="用户服务service模块"><a href="#用户服务service模块" class="headerlink" title="用户服务service模块"></a>用户服务service模块</h3><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560412993991.png" alt="1560412993991"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560413103016.png" alt="1560413103016"></p>
 <h3 id="分包"><a href="#分包" class="headerlink" title="分包"></a>分包</h3><h4 id="版本一"><a href="#版本一" class="headerlink" title="版本一"></a>版本一</h4><ul>
 <li>order-service-consumer订单消费层</li>
 <li>user-service-provider用户服务提供层</li>
 </ul>
-<p><img src="/.io//1560413314279.png" alt="1560413314279"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560413314279.png" alt="1560413314279"></p>
 <h4 id="版本二"><a href="#版本二" class="headerlink" title="版本二"></a>版本二</h4><p>将公共的地址实体、订单接口、用户接口提取到公共接口层，新建一个公共接口层</p>
-<p><img src="/.io//1560413460737.png" alt="1560413460737"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560413460737.png" alt="1560413460737"></p>
 <ul>
 <li>gmall-interface公共接口层</li>
 <li>order-service-consumer订单消费层</li>
 <li>user-service-provider用户服务提供层</li>
 </ul>
-<p><img src="/.io//1560413803648.png" alt="1560413803648"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560413803648.png" alt="1560413803648"></p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><h4 id="公共接口层代码"><a href="#公共接口层代码" class="headerlink" title="公共接口层代码"></a>公共接口层代码</h4><p>UserAddress.java</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>gmall<span class="token punctuation">.</span>bean<span class="token punctuation">;</span>
 
@@ -718,7 +718,7 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project</span><span class="token punctuation">></span></span></code></pre>
 <h5 id="配置服务提供者"><a href="#配置服务提供者" class="headerlink" title="配置服务提供者"></a>配置服务提供者</h5><p>新建<code>provider.xml</code>文件</p>
-<p><img src="/.io//1560416196643.png" alt="1560416196643"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560416196643.png" alt="1560416196643"></p>
 <ul>
 <li>指定当前服务/应用的名字</li>
 <li>指定注册中心的位置</li>
@@ -755,7 +755,7 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">></span></span>
 </code></pre>
 <h5 id="测试服务提供者"><a href="#测试服务提供者" class="headerlink" title="测试服务提供者"></a>测试服务提供者</h5><p>新建<code>MainApplication.java</code></p>
-<p><img src="/.io//1560416741955.png" alt="1560416741955"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560416741955.png" alt="1560416741955"></p>
 <p>MainApplication.java</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>gmall<span class="token punctuation">;</span>
 
@@ -776,9 +776,9 @@
 <span class="token punctuation">}</span>
 </code></pre>
 <p>在<code>dubbo</code>控制台进行查看,可以看到有一个服务提供者</p>
-<p><img src="/.io//1560416905173.png" alt="1560416905173"></p>
-<p><img src="/.io//1560416842863.png" alt="1560416842863"></p>
-<p><img src="/.io//1560416860686.png" alt="1560416860686"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560416905173.png" alt="1560416905173"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560416842863.png" alt="1560416842863"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560416860686.png" alt="1560416860686"></p>
 <h4 id="订单消费层"><a href="#订单消费层" class="headerlink" title="订单消费层"></a>订单消费层</h4><h5 id="导入依赖-1"><a href="#导入依赖-1" class="headerlink" title="导入依赖"></a>导入依赖</h5><p>pom.xml</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>project</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modelVersion</span><span class="token punctuation">></span></span>4.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modelVersion</span><span class="token punctuation">></span></span>
@@ -809,7 +809,7 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project</span><span class="token punctuation">></span></span></code></pre>
 <h5 id="配置订单消费者"><a href="#配置订单消费者" class="headerlink" title="配置订单消费者"></a>配置订单消费者</h5><p>新建consumer.xml文件</p>
-<p><img src="/.io//1560417509618.png" alt="1560417509618"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560417509618.png" alt="1560417509618"></p>
 <p>consumer.xml</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
@@ -836,7 +836,7 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">></span></span>
 </code></pre>
 <h5 id="测试订单消费者"><a href="#测试订单消费者" class="headerlink" title="测试订单消费者"></a>测试订单消费者</h5><p>新建MainApplication.java</p>
-<p><img src="/.io//1560417802317.png" alt="1560417802317"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560417802317.png" alt="1560417802317"></p>
 <p>MainApplication.java</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>gmall<span class="token punctuation">;</span>
 
@@ -862,27 +862,27 @@
 <span class="token punctuation">}</span>
 </code></pre>
 <p>运行MainApplication.java</p>
-<p><img src="/.io//1560417933975.png" alt="1560417933975"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560417933975.png" alt="1560417933975"></p>
 <p>扫描订单消费层</p>
-<p><img src="/.io//1560494281945.png" alt="1560494281945"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560494281945.png" alt="1560494281945"></p>
 <p>修改订单消费代码，将消费实现加入到容器，并把<code>UserService</code>注入进来</p>
-<p><img src="/.io//1560418003061.png" alt="1560418003061"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560418003061.png" alt="1560418003061"></p>
 <p>查看dubbo控制台，服务数：1，应用数：2，提供者数：1，消费者数：1</p>
-<p><img src="/.io//1560418137215.png" alt="1560418137215"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560418137215.png" alt="1560418137215"></p>
 <h2 id="安装dubbo-monitor-simple"><a href="#安装dubbo-monitor-simple" class="headerlink" title="安装dubbo-monitor-simple"></a>安装dubbo-monitor-simple</h2><p>简单的监控中心</p>
 <h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p><a href="https://github.com/apache/dubbo-admin/tree/master" target="_blank" rel="noopener">apache/dubbo-admin at master</a></p>
-<p><img src="/.io//1560495820794.png" alt="1560495820794"></p>
-<h3 id="解压-2"><a href="#解压-2" class="headerlink" title="解压"></a>解压</h3><p><img src="/.io//1560495743361.png" alt="1560495743361"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560495820794.png" alt="1560495820794"></p>
+<h3 id="解压-2"><a href="#解压-2" class="headerlink" title="解压"></a>解压</h3><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560495743361.png" alt="1560495743361"></p>
 <h3 id="修改配置文件-1"><a href="#修改配置文件-1" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>进入<code>C:\Users\shenlibing\Downloads\dubbo-admin-master\dubbo-monitor-simple\src\main\resources\conf</code>目录，编辑<code>dubbo.properties</code></p>
-<p><img src="/.io//1560496227527.png" alt="1560496227527"></p>
-<p><img src="/.io//1560496200232.png" alt="1560496200232"></p>
-<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><pre><code>mvn clean package -Dmaven.test.skip=true</code></pre><p><img src="/.io//1560496299065.png" alt="1560496299065"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560496227527.png" alt="1560496227527"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560496200232.png" alt="1560496200232"></p>
+<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><pre><code>mvn clean package -Dmaven.test.skip=true</code></pre><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560496299065.png" alt="1560496299065"></p>
 <h3 id="解压-3"><a href="#解压-3" class="headerlink" title="解压"></a>解压</h3><p>解压<code>dubbo-monitor-simple-2.0.0-assembly.tar.gz</code>—&gt;<code>dubbo-monitor-simple-2.0.0-assembly.tar</code>—&gt;<code>dubbo-monitor-simple-2.0.0</code></p>
-<p><img src="/.io//1560496424160.png" alt="1560496424160"></p>
-<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p><img src="/.io//1560496611658.png" alt="1560496611658"></p>
-<p><img src="/.io//1560496620775.png" alt="1560496620775"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560496424160.png" alt="1560496424160"></p>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560496611658.png" alt="1560496611658"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560496620775.png" alt="1560496620775"></p>
 <h3 id="访问-1"><a href="#访问-1" class="headerlink" title="访问"></a>访问</h3><p><a href="http://localhost:8080,如下图所示" target="_blank" rel="noopener">http://localhost:8080,如下图所示</a></p>
-<p><img src="/.io//1560496776113.png" alt="1560496776113"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560496776113.png" alt="1560496776113"></p>
 
             </div>
             <hr/>

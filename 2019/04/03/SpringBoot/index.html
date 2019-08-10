@@ -2169,7 +2169,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </code></pre>
 <blockquote>
 <h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3></blockquote>
-<p><img src="/.io//%E9%BB%98%E8%AE%A4%E5%BC%82%E5%B8%B8%E9%A1%B5%E9%9D%A2.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/%E9%BB%98%E8%AE%A4%E5%BC%82%E5%B8%B8%E9%A1%B5%E9%9D%A2.png" alt></p>
 <blockquote>
 <h3 id="修改页面-2"><a href="#修改页面-2" class="headerlink" title="修改页面"></a>修改页面</h3></blockquote>
 <p>如果我们需要将所有的异常同一跳转到自定义的错误页面需要在<code>src/main/resources/templates</code>目录下创建<code>error.html</code>页面,名称必须叫<code>error.html</code></p>
@@ -2279,7 +2279,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </code></pre>
 <blockquote>
 <h3 id="效果-1"><a href="#效果-1" class="headerlink" title="效果"></a>效果</h3></blockquote>
-<p><img src="/.io//@ExceptionHandle%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/@ExceptionHandle%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8.png" alt></p>
 <blockquote>
 <h3 id="弊端-1"><a href="#弊端-1" class="headerlink" title="弊端"></a>弊端</h3></blockquote>
 <p>只有标记了<code>@ExceptionHandle</code>注解的<code>Controller</code>类才能处理跳转到自定义异常页面，而其它的<code>Controller</code>类中的方法则还是跳转到<code>springboot</code>默认机制的异常处理</p>
@@ -2327,7 +2327,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </code></pre>
 <blockquote>
 <h3 id="效果-2"><a href="#效果-2" class="headerlink" title="效果"></a>效果</h3></blockquote>
-<p><img src="/.io//@ControllerAdvice+@ExceptionHandler%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/@ControllerAdvice+@ExceptionHandler%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8.png" alt></p>
 <blockquote>
 <h2 id="SimpleMappingExceptionResolver"><a href="#SimpleMappingExceptionResolver" class="headerlink" title="SimpleMappingExceptionResolver"></a>SimpleMappingExceptionResolver</h2></blockquote>
 <p>比起<code>@ControllerAdvice+@ExceptionHandler</code>处理异常,通过<code>SimpleMappingExceptionResolver</code>做全局异常处理,方式更优雅,但是有个缺点即在异常页面不能输出异常信息</p>
@@ -2369,7 +2369,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <blockquote>
 <h3 id="效果-3"><a href="#效果-3" class="headerlink" title="效果"></a>效果</h3></blockquote>
 <p>不能输出异常信息</p>
-<p><img src="/.io//SimpleMappingExceptionResolver%E7%B1%BB%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/SimpleMappingExceptionResolver%E7%B1%BB%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8.png" alt></p>
 <blockquote>
 <h3 id="弊端-2"><a href="#弊端-2" class="headerlink" title="弊端"></a>弊端</h3></blockquote>
 <p>不能在异常页面输出异常信息，<code>SimpleMappingExceptionResolver</code>类处理异常只能针对不同的异常映射不同的视图逻辑</p>
@@ -2582,7 +2582,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </code></pre>
 <blockquote>
 <h5 id="maven命令启动"><a href="#maven命令启动" class="headerlink" title="maven命令启动"></a>maven命令启动</h5></blockquote>
-<p><img src="/.io//maven%E5%91%BD%E4%BB%A4%E5%90%AF%E7%94%A8%E7%83%AD%E9%83%A8%E7%BD%B2.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/maven%E5%91%BD%E4%BB%A4%E5%90%AF%E7%94%A8%E7%83%AD%E9%83%A8%E7%BD%B2.png" alt></p>
 <blockquote>
 <h5 id="弊端-3"><a href="#弊端-3" class="headerlink" title="弊端"></a>弊端</h5></blockquote>
 <p>这种方式的缺点是<code>Springloader</code>热部署程序是在系统后台以进程的形式来运行,需要手动关闭该进程<br>对<code>Java</code>代码做部署处理,但是对页面无能为力</p>

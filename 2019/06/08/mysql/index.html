@@ -438,7 +438,7 @@ rzsz[root@192 modules]# yum -y  install lrzsz上传[root@1">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="https://downloads.mysql.com/archives/community/" target="_blank" rel="noopener">MySQL :: Download MySQL Community Server (Archived Versions)</a></p>
-<p><img src="/.io//1559999836333.png" alt="1559999836333"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1559999836333.png" alt="1559999836333"></p>
 <h2 id="rzsz"><a href="#rzsz" class="headerlink" title="rzsz"></a>rzsz</h2><pre><code>[root@192 modules]# yum -y  install lrzsz</code></pre><h2 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h2><pre><code>[root@192 modules]# ll
 total 66632
 -rw-r--r--. 1 root root 17855952 Jun  8 20:04 MySQL-client-5.5.48-1.linux2.6.x86_64.rpm
@@ -494,7 +494,7 @@ Starting MySQL..                                           [  OK  ]</code></pre>
 mysql              0:off    1:off    2:on    3:on    4:on    5:on    6:off</code></pre><h2 id="关闭服务"><a href="#关闭服务" class="headerlink" title="关闭服务"></a>关闭服务</h2><pre><code>[root@192 mysql]# service mysql stop
 Shutting down MySQL...                                     [  OK  ]</code></pre><h2 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h2><pre><code>[root@192 mysql]# service mysql restart;
 Shutting down MySQL.                                       [  OK  ]
-Starting MySQL..                                           [  OK  ]</code></pre><h2 id="检查开机是否自动启动mysql服务"><a href="#检查开机是否自动启动mysql服务" class="headerlink" title="检查开机是否自动启动mysql服务"></a>检查开机是否自动启动mysql服务</h2><pre><code>[root@192 mysql]# ntsysv</code></pre><p><img src="/.io//1560149842747.png" alt="1560149842747"></p>
+Starting MySQL..                                           [  OK  ]</code></pre><h2 id="检查开机是否自动启动mysql服务"><a href="#检查开机是否自动启动mysql服务" class="headerlink" title="检查开机是否自动启动mysql服务"></a>检查开机是否自动启动mysql服务</h2><pre><code>[root@192 mysql]# ntsysv</code></pre><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560149842747.png" alt="1560149842747"></p>
 <h2 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h2><pre><code>[root@192 modules]# /usr/bin/mysqladmin -u root password &#39;000000&#39;</code></pre><h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><pre><code>[root@192 modules]# mysql -uroot -p
 Enter password: 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -514,7 +514,7 @@ Query OK, 0 rows affected (0.00 sec)
 mysql&gt; FLUSH PRIVILEGES;
 Query OK, 0 rows affected (0.00 sec)</code></pre><h2 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h2><ul>
 <li><p>客户端连接不上</p>
-<p><img src="/.io//1560004124502.png" alt="1560004124502"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560004124502.png" alt="1560004124502"></p>
 <ul>
 <li><p>关闭防火墙</p>
 <pre><code>[root@192 ~]# service iptables stop;
@@ -569,7 +569,7 @@ root       7672   4519  0 15:02 pts/0    00:00:00 grep mysql</code></pre><ul>
 +--------------------------+----------------------------+
 8 rows in set (0.00 sec)
 </code></pre><h2 id="安装NPPFTP"><a href="#安装NPPFTP" class="headerlink" title="安装NPPFTP"></a>安装NPPFTP</h2><p>设置—导入—-导入插件</p>
-<p><img src="/.io//1560301765932.png" alt="1560301765932"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560301765932.png" alt="1560301765932"></p>
 <h2 id="修改字符编码为utf8"><a href="#修改字符编码为utf8" class="headerlink" title="修改字符编码为utf8"></a>修改字符编码为utf8</h2><p>编辑配置文件<code>vim /etc/my.cnf</code>，追加</p>
 <pre><code>[mysql]
 default-character-set=utf8
@@ -627,10 +627,10 @@ collation_server=utf8_general_ci</code></pre><p>再次查看字符编码</p>
 <li>Oracle：从右往左去执行WHERE条件的。</li>
 </ul>
 <p>结论：写WHERE条件的时候，优先级高的部分要去编写过滤力度最大的条件语句。</p>
-<p><img src="/.io//1560151970456.png" alt="1560151970456"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560151970456.png" alt="1560151970456"></p>
 <h1 id="多表之间关系"><a href="#多表之间关系" class="headerlink" title="多表之间关系"></a>多表之间关系</h1><h2 id="一对一"><a href="#一对一" class="headerlink" title="一对一"></a>一对一</h2><h2 id="一对多"><a href="#一对多" class="headerlink" title="一对多"></a>一对多</h2><p><strong>从表</strong>是：<strong>分类表</strong>。从表中，应该有一个字段去关联主表，而这个关联字段就是<strong>主键</strong>。</p>
 <p><strong>主表</strong>是：<strong>商品表</strong>。主表中，应该有一个字段去关联从表，而这个关联字段就是<strong>外键</strong>。</p>
-<p><img src="/.io//1560045917048.png" alt="1560045917048"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560045917048.png" alt="1560045917048"></p>
 <p> 在互联网项目中，一般情况下，<strong>不建议建立外键关系</strong>。</p>
 <h2 id="多对多"><a href="#多对多" class="headerlink" title="多对多"></a>多对多</h2><ul>
 <li>双向的一对多</li>
@@ -772,11 +772,11 @@ mysql&gt; SHOW VARIABLES LIKE &#39;long_query_time%&#39;;
 <h2 id="B树索引"><a href="#B树索引" class="headerlink" title="B树索引"></a>B树索引</h2><ul>
 <li><code>select * from student where age = 33</code>如果不加索引，从上往下查找需要查找5次，而加了索引，查找的节点处于第三层，所以只需要查找3次</li>
 </ul>
-<p><img src="/.io//1560241574572.png" alt="1560241574572"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560241574572.png" alt="1560241574572"></p>
 <h2 id="B-Tree"><a href="#B-Tree" class="headerlink" title="B+Tree"></a>B+Tree</h2><ul>
 <li><code>Btree</code>数据全部放在叶子节点</li>
 </ul>
-<p><img src="/.io//1560241687522.png" alt="1560241687522"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560241687522.png" alt="1560241687522"></p>
 <h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul>
 <li>主键索引：  不能重复，是一种特殊的唯一索引，不允许有空值</li>
 <li>唯一索引  ：不能重复，允许为空值</li>
@@ -976,7 +976,7 @@ long_query_time=3</code></pre><h2 id="查看SQL执行计划"><a href="#查看SQL
 <li>教师表<code>(teacher)</code></li>
 <li>教师课程描述表<code>(teacherCard)</code></li>
 </ul>
-<p><img src="/.io//1560245341475.png" alt="1560245341475"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1560245341475.png" alt="1560245341475"></p>
 <h3 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> course
 <span class="token punctuation">(</span>
 cid <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>

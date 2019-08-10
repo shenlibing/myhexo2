@@ -755,7 +755,7 @@ public FutureTask(Callable<V> callable) {
 </code></pre>
 <h2 id="线程池的合理配置"><a href="#线程池的合理配置" class="headerlink" title="线程池的合理配置"></a>线程池的合理配置</h2><h3 id="获取系统设备处理器核数"><a href="#获取系统设备处理器核数" class="headerlink" title="获取系统设备处理器核数"></a>获取系统设备处理器核数</h3><pre class=" language-java"><code class="language-java">Runtime<span class="token punctuation">.</span><span class="token function">getRuntime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">availableProcessors</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 <h2 id="考虑因素"><a href="#考虑因素" class="headerlink" title="考虑因素"></a>考虑因素</h2><h3 id="CPU密集型"><a href="#CPU密集型" class="headerlink" title="CPU密集型"></a>CPU密集型</h3><p>线程数 = CPU可用核心数/(1 - 阻塞系数)，其中阻塞系数的取值在0和1之间</p>
-<h3 id="IO密集型"><a href="#IO密集型" class="headerlink" title="IO密集型"></a>IO密集型</h3><h2 id="线程池的工作原理"><a href="#线程池的工作原理" class="headerlink" title="线程池的工作原理"></a>线程池的工作原理</h2><p><img src="/.io//1557299840009.png" alt="1557299840009"></p>
+<h3 id="IO密集型"><a href="#IO密集型" class="headerlink" title="IO密集型"></a>IO密集型</h3><h2 id="线程池的工作原理"><a href="#线程池的工作原理" class="headerlink" title="线程池的工作原理"></a>线程池的工作原理</h2><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1557299840009.png" alt="1557299840009"></p>
 <h3 id="execute方法执行逻辑"><a href="#execute方法执行逻辑" class="headerlink" title="execute方法执行逻辑"></a>execute方法执行逻辑</h3><h4 id="核心线程数"><a href="#核心线程数" class="headerlink" title="核心线程数"></a>核心线程数</h4><p>如果当前运行的线程少于<code>corePoolSize</code>，则会创建新的线程来执行新的任务</p>
 <h4 id="加入阻塞队列"><a href="#加入阻塞队列" class="headerlink" title="加入阻塞队列"></a>加入阻塞队列</h4><p>如果运行的线程个数等于或者大于<code>corePoolSize</code>，则会将提交的任务存放到阻塞队列<code>workQueue</code>中</p>
 <h4 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h4><p>如果当前<code>workQueue</code>队列已满的话，则会创建新的线程来执行任务</p>
@@ -789,7 +789,7 @@ public FutureTask(Callable<V> callable) {
 <span class="token punctuation">}</span></code></pre>
 <p>运行</p>
 <p>配置参数</p>
-<p><img src="/.io//1564643060262.png" alt="1564643060262"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1564643060262.png" alt="1564643060262"></p>
 <p>结果</p>
 <pre><code>Exception in thread &quot;main&quot; java.lang.OutOfMemoryError: Java heap space
     at java.util.Arrays.copyOf(Arrays.java:3332)
@@ -824,7 +824,7 @@ public FutureTask(Callable<V> callable) {
 <span class="token punctuation">}</span>
 </code></pre>
 <p>运行参数配置</p>
-<p><img src="/.io//1564643600222.png" alt="1564643600222"></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1564643600222.png" alt="1564643600222"></p>
 <p> 结果</p>
 <pre><code>[GC (Allocation Failure) [PSYoungGen: 2048K-&gt;480K(2560K)] 2048K-&gt;916K(9728K), 0.0043924 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] 
 [GC (Allocation Failure) [PSYoungGen: 2528K-&gt;480K(2560K)] 2964K-&gt;2709K(9728K), 0.0022096 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
@@ -964,7 +964,7 @@ Killed  </code></pre><p>以root用户登录开启另外一个终端</p>
 [root@192 ~]# kill -9 4120</code></pre><p>修改用户线程数</p>
 <pre><code>[root@192 ~]# ulimit -u
 4096
-[root@192 ~]# vim /etc/security/limits.d/90-nproc.conf </code></pre><p><img src="/.io//1564647962235.png" alt="1564647962235"></p>
+[root@192 ~]# vim /etc/security/limits.d/90-nproc.conf </code></pre><p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1564647962235.png" alt="1564647962235"></p>
 <h3 id="Metaspace"><a href="#Metaspace" class="headerlink" title="Metaspace"></a>Metaspace</h3><p>Java8及之后的版本使用Metaspace来替代永久代。</p>
 <p>Metaspace是方法区在HotSpot的实现，它与永久代最大的区别在于：Metaspace并不在虚拟机内存中而是使用本地内存，也即在java8中，classe metadata（the virtual machines internal presentation of java class），被存储在叫做Metaspace的native memory</p>
 <p>永久代（java8后被元空间Metaspace取代了）存放了一下信息：</p>

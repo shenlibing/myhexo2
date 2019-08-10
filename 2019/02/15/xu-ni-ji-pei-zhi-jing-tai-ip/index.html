@@ -473,12 +473,12 @@ https://wiki.centos.org/Download
 </code></pre><p>2、NAT模式配置</p>
 <p><strong>编辑–虚拟网络编辑器</strong></p>
 <p>配置静态ip网段和子网掩码</p>
-<p><img src="/.io//nat%E6%A8%A1%E5%BC%8F%E9%85%8D%E7%BD%AE.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/nat%E6%A8%A1%E5%BC%8F%E9%85%8D%E7%BD%AE.png" alt></p>
 <p>NAT设置</p>
 <p>网关ip不能和vmnet8的ip地址冲突</p>
-<p><img src="/.io//NAT%E8%AE%BE%E7%BD%AE%E7%BD%91%E5%85%B3.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/NAT%E8%AE%BE%E7%BD%AE%E7%BD%91%E5%85%B3.png" alt></p>
 <p>宿主机上的<code>vmnet8</code>网卡会自动分配ip</p>
-<p><img src="/.io//%E5%AE%BF%E4%B8%BB%E6%9C%BAvmnet8%E7%BD%91%E5%8D%A1%E4%BF%A1%E6%81%AF.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/%E5%AE%BF%E4%B8%BB%E6%9C%BAvmnet8%E7%BD%91%E5%8D%A1%E4%BF%A1%E6%81%AF.png" alt></p>
 <p>3、配置静态ip</p>
 <blockquote>
 <p>ONBOOT=yes系统启动时激活网卡<br>BOOTPROTO=static通过指定方式的办法来获得地址，设置为静态手动配置<br>IPADDR=192.168.1.104主机ip地址<br>GATEWAY=192.168.1.2网关<br>NETMASK=255.255.255.0子网掩码<br>DNS1=8.8.8.8配置DNS域名解析访问互联网<br>DNS2=8.8.4.4</p>
