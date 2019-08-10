@@ -2837,15 +2837,15 @@ for update
 </code></pre>
 <blockquote>
 <h3 id="xml转义"><a href="#xml转义" class="headerlink" title="xml转义"></a>xml转义</h3></blockquote>
-<p>用<code>&lt;![CDATA[]]&gt;</code>包裹住有转义的字符即可</p>
+<p>用<code>&amp;lt![CDATA[]]&amp;gt</code>包裹住有转义的字符即可</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>selectOrderStatusByCreateTime<span class="token punctuation">"</span></span> <span class="token attr-name">resultMap</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>BaseResultMap<span class="token punctuation">"</span></span> <span class="token attr-name">parameterType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>map<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 SELECT
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include</span> <span class="token attr-name">refid</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Base_Column_List<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
 from mmall_order
 where status = #{status}
-<span class="token cdata">&lt;![CDATA[
+&amp;lt![CDATA[
 and create_time &lt;= #{date}
-]]></span>
+]]&amp;gt
 order by create_time desc
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>
 </code></pre>
