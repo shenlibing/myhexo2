@@ -658,15 +658,15 @@ dns<span class="token punctuation">.</span><span class="token function">resolve<
 <h2 id="NodeJS数据交互"><a href="#NodeJS数据交互" class="headerlink" title="NodeJS数据交互"></a>NodeJS数据交互</h2></blockquote>
 <blockquote>
 <h3 id="设置响应头"><a href="#设置响应头" class="headerlink" title="设置响应头"></a>设置响应头</h3></blockquote>
-<p><img src="/.io//%E8%AE%BE%E7%BD%AE%E5%93%8D%E5%BA%94%E5%A4%B4.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/%E8%AE%BE%E7%BD%AE%E5%93%8D%E5%BA%94%E5%A4%B4.png" alt></p>
 <blockquote>
 <h3 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h3></blockquote>
 <p>数据放在url地址上，存放的数量小(32k)</p>
-<p><img src="/.io//get%E8%AF%B7%E6%B1%82.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/get%E8%AF%B7%E6%B1%82.png" alt></p>
 <blockquote>
 <h3 id="post请求"><a href="#post请求" class="headerlink" title="post请求"></a>post请求</h3></blockquote>
 <p>在body里面,存放的数据量大(1G),一个大数据包切成一堆小包传输,容错性强</p>
-<p><img src="/.io//post%E8%AF%B7%E6%B1%82.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/post%E8%AF%B7%E6%B1%82.png" alt></p>
 <blockquote>
 <h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h3></blockquote>
 <p>一切来自前台的数据都不可信<br>前后台都得进行数据校验<br>  前台校验：提高用户体验<br>  后台校验：提高安全性</p>
@@ -716,14 +716,14 @@ dns<span class="token punctuation">.</span><span class="token function">resolve<
 <blockquote>
 <h4 id="表单的三种POST"><a href="#表单的三种POST" class="headerlink" title="表单的三种POST"></a>表单的三种POST</h4></blockquote>
 <p><code>text/plain</code>,用的很少，纯文字<br><code>application/x-www-form-urlencoded</code>,默认,以url编码方式,<code>xxx=xxx&amp;xxx=xx...</code><br><code>multipart/form-data</code>上传文件内容</p>
-<p><img src="/.io//%E8%A1%A8%E5%8D%95post%E8%AF%B7%E6%B1%823%E7%A7%8D%E6%96%B9%E5%BC%8F.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/%E8%A1%A8%E5%8D%95post%E8%AF%B7%E6%B1%823%E7%A7%8D%E6%96%B9%E5%BC%8F.png" alt></p>
 <p>file上传，是post请求方式</p>
 <blockquote>
 <h4 id="普通纯文本表单文件上传"><a href="#普通纯文本表单文件上传" class="headerlink" title="普通纯文本表单文件上传"></a>普通纯文本表单文件上传</h4></blockquote>
 <p>普通纯文本文件上传可以用字符串拼接接收，有弊端，如果是图片文件上传，用字符串接收会出现数据错乱</p>
-<p><img src="/.io//%E6%99%AE%E9%80%9A%E7%BA%AF%E6%96%87%E6%9C%AC%E8%A1%A8%E5%8D%95%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/%E6%99%AE%E9%80%9A%E7%BA%AF%E6%96%87%E6%9C%AC%E8%A1%A8%E5%8D%95%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.png" alt></p>
 <p>描述：可以看到纯文本文件上传请求了2个资源</p>
-<p>浏览器<br><img src="/.io//%E6%99%AE%E9%80%9A%E7%BA%AF%E6%96%87%E6%9C%AC%E8%A1%A8%E5%8D%95%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A02.png" alt></p>
+<p>浏览器<br><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/%E6%99%AE%E9%80%9A%E7%BA%AF%E6%96%87%E6%9C%AC%E8%A1%A8%E5%8D%95%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A02.png" alt></p>
 <p>后台结果输出</p>
 <p>包含了前台表单用户名、密码和纯文本文件的描述和内容</p>
 <pre><code>/upload
@@ -745,7 +745,7 @@ abc
 /favicon.ico
 </code></pre><blockquote>
 <h4 id="Buffer接收文件上传的原始二进制数据"><a href="#Buffer接收文件上传的原始二进制数据" class="headerlink" title="Buffer接收文件上传的原始二进制数据"></a><code>Buffer</code>接收文件上传的原始二进制数据</h4></blockquote>
-<p><img src="/.io//%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0post%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0post%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8.png" alt></p>
 <pre><code>/upload
 &lt;Buffer 2d 2d 2d 2d 2d 2d 57 65 62 4b 69 74 46 6f 72 6d 42 6f 75 6e 64 61 72 79 75 42 6d 6b 78 4a 65 51 6d 35 6b 4a 4f 68 59 65 0d 0a 43 6f 6e 74 65 6e 74 2d ... &gt;
 /favicon.ico
@@ -1012,7 +1012,7 @@ server<span class="token punctuation">.</span><span class="token function">liste
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/.io//%E6%B2%A1%E6%9C%89%E9%80%9A%E8%BF%87gz%E5%8E%8B%E7%BC%A9%E4%BC%A0%E8%BE%93.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/%E6%B2%A1%E6%9C%89%E9%80%9A%E8%BF%87gz%E5%8E%8B%E7%BC%A9%E4%BC%A0%E8%BE%93.png" alt></p>
 <blockquote>
 <h4 id="gz压缩传输"><a href="#gz压缩传输" class="headerlink" title="gz压缩传输"></a>gz压缩传输</h4></blockquote>
 <p>读写流,通过<code>gz</code>压缩传输,请求资源<code>1.html</code>文件大小<code>292B</code>，<code>jquery.js</code>文件大小<code>77.8KB</code></p>
@@ -1040,8 +1040,8 @@ server<span class="token punctuation">.</span><span class="token function">liste
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/.io//%E9%80%9A%E8%BF%87gz%E5%8E%8B%E7%BC%A9%E4%BC%A0%E8%BE%93.png" alt></p>
-<p><img src="/.io//%E9%80%9A%E8%BF%87gz%E5%8E%8B%E7%BC%A9%E4%BC%A0%E8%BE%932.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/%E9%80%9A%E8%BF%87gz%E5%8E%8B%E7%BC%A9%E4%BC%A0%E8%BE%93.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/%E9%80%9A%E8%BF%87gz%E5%8E%8B%E7%BC%A9%E4%BC%A0%E8%BE%932.png" alt></p>
 <blockquote>
 <h2 id="NodeJS进阶下"><a href="#NodeJS进阶下" class="headerlink" title="NodeJS进阶下"></a>NodeJS进阶下</h2></blockquote>
 <blockquote>
@@ -1063,7 +1063,7 @@ fs<span class="token punctuation">.</span><span class="token function">stat</spa
 <blockquote>
 <h5 id="服务器设置响应头Last-Modified"><a href="#服务器设置响应头Last-Modified" class="headerlink" title="服务器设置响应头Last-Modified"></a>服务器设置响应头<code>Last-Modified</code></h5></blockquote>
 <p>标记文件最后一次修改时间</p>
-<p><img src="/.io//%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE%E5%93%8D%E5%BA%94%E5%A4%B4%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE%E5%93%8D%E5%BA%94%E5%A4%B4%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4.png" alt></p>
 <blockquote>
 <h5 id="缓存实现过程"><a href="#缓存实现过程" class="headerlink" title="缓存实现过程"></a>缓存实现过程</h5></blockquote>
 <pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> http<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1119,10 +1119,10 @@ http<span class="token punctuation">.</span><span class="token function">createS
 </code></pre>
 <p>第一次请求,响应状态码200,浏览器没有缓存</p>
 <p>服务器响应头带了<code>Last-Modified</code>标记该资源文件最后一次修改时间</p>
-<p><img src="/.io//%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%B7%E6%B1%82%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt><br><img src="/.io//%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%B7%E6%B1%82%E6%9C%8D%E5%8A%A1%E5%99%A82.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%B7%E6%B1%82%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt><br><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%B7%E6%B1%82%E6%9C%8D%E5%8A%A1%E5%99%A82.png" alt></p>
 <p>第二次请求,响应状态码304，浏览器有缓存</p>
 <p>请求头带了<code>if-modified-since</code>标记该资源文件的最后一次修改时间,通过该标记去告诉服务器我本地有这个文件及这个文件最后一次修改时间，服务器收到请求通过<code>if-modified-since</code>标记的时间和服务器上该文件的时间进行比较，如果服务器的文件等于<code>if-modified-since</code>的时间，说明该资源文件没有被修改过，浏览器决定从不从缓存中取出</p>
-<p><img src="/.io//%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%B7%E6%B1%82%E6%9C%8D%E5%8A%A1%E5%99%A83.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%B7%E6%B1%82%E6%9C%8D%E5%8A%A1%E5%99%A83.png" alt></p>
 <blockquote>
 <h4 id="缓存策略"><a href="#缓存策略" class="headerlink" title="缓存策略"></a>缓存策略</h4></blockquote>
 <p>服务器设置响应头<code>cache-control</code>和<code>expires</code></p>
@@ -1647,9 +1647,7 @@ server<span class="token punctuation">.</span><span class="token function">liste
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Lombok原理及使用下载官网
-插件下载
-IDEA安装Lombok插件Add the Lombok IntelliJ plugin to add lombok support for IntelliJ:Go to File &gt; Set
+                            Tomcat、Redis集群搭建，定时任务、分布式锁、全局异常控制、拦截器、单点登录
                         
                     </div>
                     <div class="publish-info">
@@ -1706,7 +1704,7 @@ IDEA安装Lombok插件Add the Lombok IntelliJ plugin to add lombok support for I
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            企业级开发框架ssm
+                            企业级开发框架ssm,用户、分类、商品、购物车、订单、收货地址、支付等模块
                         
                     </div>
                     <div class="publish-info">
