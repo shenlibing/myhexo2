@@ -421,14 +421,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.2k
+                        2.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        11 分
+                        12 分
                     </div>
                     
                 
@@ -693,7 +693,49 @@
     auto_excerpt:
       enable: true
       length: 150
-</code></pre><h1 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h1><p>错误一：</p>
+</code></pre><h2 id="添加评论"><a href="#添加评论" class="headerlink" title="添加评论"></a>添加评论</h2><p>选择<code>gitalk</code></p>
+<p>需要 <strong>GitHub Application</strong>，如果没有 <a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">点击这里申请</a>，<code>Authorization callback URL</code> 填写当前使用插件页面的域名。</p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1565523375504.png" alt="1565523375504"></p>
+<p>获取<code>client_id</code>和<code>client_secret</code></p>
+<p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source/1565523495363.png" alt="1565523495363"></p>
+<p>进入<code>D:\mytest\myhexo</code>文件夹，编辑<code>_config.yml</code>文件</p>
+<ul>
+<li><p><strong>clientID</strong> <code>String</code></p>
+<p><strong>Required</strong>. GitHub Application Client ID.</p>
+</li>
+<li><p><strong>clientSecret</strong> <code>String</code></p>
+<p><strong>Required</strong>. GitHub Application Client Secret.</p>
+</li>
+<li><p><strong>repo</strong> <code>String</code></p>
+<p><strong>Required</strong>. GitHub repository.</p>
+</li>
+<li><p><strong>owner</strong> <code>String</code></p>
+<p><strong>Required</strong>. GitHub repository owner. Can be personal user or organization.</p>
+</li>
+<li><p><strong>admin</strong> <code>Array</code></p>
+<p><strong>Required</strong>. GitHub repository owner and collaborators. (Users who having write access to this repository)</p>
+</li>
+</ul>
+<pre><code># Gitalk
+# Demo: https://gitalk.github.io
+# Reference: https://asdfv1929.github.io/2018/01/20/gitalk/, https://liujunzhou.top/2018/8/10/gitalk-error/
+gitalk:
+  enable: true
+  github_id:  shenlibing # Github repo owner
+  repo:  myhexo # Repository name to store issues.
+  client_id:  # Github Application Client ID
+  client_secret:  # Github Application Client Secret
+  admin_user:  shenlibing # GitHub repo owner and collaborators, only these guys can initialize github issues
+  distraction_free_mode: true # Facebook-like distraction free mode</code></pre><h2 id="开启打赏"><a href="#开启打赏" class="headerlink" title="开启打赏"></a>开启打赏</h2><p>进入<code>D:\mytest\myhexo</code>文件夹，编辑<code>_config.yml</code>文件</p>
+<pre><code># Reward
+# If true, reward would be displayed in every article by default.
+# And you can show or hide one article specially through add page variable `reward: true/false`.
+reward:
+  enable: true
+  #comment: Donate comment here
+  wechatpay: /images/wechat.jpg
+  alipay: /images/alipay.jpg
+  #bitcoin: /images/bitcoin.jpg</code></pre><h1 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h1><p>错误一：</p>
 <p>故障现象：xml转移错误，导致搜索不出结果</p>
 <p><img src="https://raw.githubusercontent.com/shenlibing/blogphoto/master/source//1565313673086.png" alt="1565313673086"></p>
 <p>故障原因：</p>
