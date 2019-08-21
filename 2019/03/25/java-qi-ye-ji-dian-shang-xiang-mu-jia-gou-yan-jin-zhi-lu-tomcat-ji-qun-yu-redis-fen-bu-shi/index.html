@@ -263,6 +263,19 @@ IDEA安装Lombok插件Add the Lombok IntelliJ plugin to add lombok support for I
 </header>
 
 
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = 'edcf6e023b09eaa321449dc8813cdfc9f40ceddd699fe44ebeeb3004375bf2ce';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
